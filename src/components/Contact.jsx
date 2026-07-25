@@ -32,7 +32,7 @@ function Contact({ getDirection }) {
         `Message: ${data.comments || "-"}`,
     );
 
-    const whatsappURL = `https://wa.me/937000000000?text=${message}`;
+    const whatsappURL = `https://wa.me/93703660660?text=${message}`;
 
     window.open(whatsappURL, "_blank");
 
@@ -93,10 +93,10 @@ function Contact({ getDirection }) {
                     <div className="">
                       <h4 className="font-medium">{t("phone")}</h4>
                       <a
-                        href="tel:+93700000000"
+                        href="tel:+93711580580"
                         className="text-sm md:text-base hover:text-colors-secondTextColor transition-colors duration-300"
                       >
-                        +93700000000
+                        <bdi>+93 711 580 580</bdi>
                       </a>
                     </div>
                   </div>
@@ -106,7 +106,9 @@ function Contact({ getDirection }) {
                     </p>
                     <div className="">
                       <h4 className="font-medium">{t("location")}</h4>
-                      <p className="text-sm md:text-base">CLIENTLOCATION</p>
+                      <p className="text-sm md:text-base">
+                        {t("clientLocation")}
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
@@ -116,10 +118,10 @@ function Contact({ getDirection }) {
                     <div className="">
                       <h4 className="font-medium">{t("email")}</h4>
                       <a
-                        href="mailto:CLIENTGMAIL@gmail.com"
+                        href="mailto:info@burjezamincc.com"
                         className="text-sm md:text-base hover:text-colors-secondTextColor transition-colors duration-300"
                       >
-                        CLIENTGMAIL@gmail.com
+                        info@burjezamincc.com
                       </a>
                     </div>
                   </div>

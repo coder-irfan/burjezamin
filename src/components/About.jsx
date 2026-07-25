@@ -12,7 +12,7 @@ function About({ getDirection }) {
         className="py-14 md:py-20 xl:py-28 px-4 md:px-6 lg:px-16"
       >
         <div
-          className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-10 bg-colors-secondBg py-10 px-6 md:p-10 lg:p-10 xl:p-12
+          className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-10 bg-colors-secondBg p-6 md:p-10 lg:p-10 xl:p-8
           rounded-2xl relative"
         >
           <img
@@ -20,10 +20,10 @@ function About({ getDirection }) {
             alt="hat"
             loading="lazy"
             decoding="async"
-            className="absolute -top-8 w-20 left-0 md:w-24 md:-top-12 lg:-top-20 xl:-top-16 lg:left-6 lg:w-32"
+            className="absolute -top-8 w-20 left-0 md:w-20 md:-top-12 lg:-top-20 xl:-top-20 lg:left-6 lg:w-28"
           />
           <div
-            className={`max-w-[500px] md:max-w-[350px] lg:max-w-[400px] xl:max-w-xl mx-auto space-y-4 lg:space-y-8 text-center ${isRTL ? "md:text-right" : "md:text-left"}`}
+            className={`max-w-[500px] md:max-w-[350px] lg:max-w-[400px] xl:max-w-xl mx-auto space-y-4 lg:space-y-6 text-center ${isRTL ? "md:text-right" : "md:text-left"}`}
           >
             <div className="space-y-2">
               <div
@@ -53,11 +53,11 @@ function About({ getDirection }) {
 
           <div className="flex items-center justify-between gap-x-4 md:gap-x-6 xl:gap-x-8">
             <img
-              src="images/man-holding-stuff.webp"
-              alt="man hodling stuff"
+              src="images/about-us.jpg"
+              alt="burj zamin building"
               loading="lazy"
               decoding="async"
-              className="rounded-md w-[500px] sm:h-96 xl:h-auto lg:w-auto object-cover"
+              className="rounded-lg w-[500px] sm:h-96 xl:h-auto lg:w-auto object-cover"
             />
           </div>
         </div>

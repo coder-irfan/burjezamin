@@ -19,14 +19,14 @@ function Services({ getDirection }) {
       number: 2,
       title: t("service2_title"),
       description: t("service2_desc"),
-      image: "images/المخططات التنفيذيه.webp",
+      image: "images/planning.webp",
     },
     {
       id: "3",
       number: 3,
       title: t("service3_title"),
       description: t("service3_desc"),
-      image: "images/undefined (1).webp",
+      image: "images/building.webp",
     },
     {
       id: "4",
@@ -118,7 +118,7 @@ function Services({ getDirection }) {
                   <div className="mt-auto pt-2 md:pt-4">
                     <a href="#projects">
                       <button className="text-sm font-semibold text-colors-secondTextColor hover:underline">
-                        {t("viewMore")}
+                        {t("viewMore")} →
                       </button>
                     </a>
                   </div>

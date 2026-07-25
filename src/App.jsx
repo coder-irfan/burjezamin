@@ -12,7 +12,8 @@ import WhatsApp from "./components/WhatsApp";
 const Services = lazy(() => import("./components/Services"));
 const Testimonial = lazy(() => import("./components/Testimonial"));
 const FAQ = lazy(() => import("./components/FAQ"));
-const DoneProjects = lazy(() => import("./components/DoneProjects"));
+const CoreValues = lazy(() => import("./components/CoreValues"));
+const Projects = lazy(() => import("./components/Projects"));
 const Contact = lazy(() => import("./components/Contact"));
 const Location = lazy(() => import("./components/Location"));
 const NewsLetter = lazy(() => import("./components/NewsLetter"));
@@ -66,11 +67,13 @@ const Landing = ({ getDirection }) => (
 
       <FAQ getDirection={getDirection} />
 
+      <CoreValues getDirection={getDirection} />
+
       <div className="bg-testimonial-bg bg-contain bg-no-repeat bg-center bg-colors-secondBg">
         <Testimonial getDirection={getDirection} />
       </div>
 
-      <DoneProjects getDirection={getDirection} />
+      <Projects getDirection={getDirection} />
 
       <div className="bg-contact-bg bg-contain bg-no-repeat bg-right-top bg-colors-secondBg">
         <Contact getDirection={getDirection} />

@@ -14,7 +14,7 @@ function Footer({ getDirection }) {
         <div className="flex flex-col lg:flex-row justify-center lg:justify-between gap-8 lg:gap-10 pb-8">
           <div className="space-y-5 lg:space-y-5 max-w-md lg:max-w-xs flex flex-col items-start justify-start ">
             <img
-              src="images/logo-blue-english.png"
+              src="images/logo-blue-english.webp"
               alt="logo"
               className="w-36 md:w-44 lg:w-52 object-contain"
             />
@@ -113,19 +113,19 @@ function Footer({ getDirection }) {
                 <li className="flex items-center gap-2">
                   <FaPhone className="lg:text-lg text-colors-thirdBg" />
                   <a
-                    href="tel:+93700000000"
+                    href="tel:+93711580580"
                     className="text-sm md:text-base hover:text-colors-secondTextColor transition-colors duration-300"
                   >
-                    +93700000000
+                    <bdi>+93 711 580 580</bdi>
                   </a>
                 </li>
                 <li className="flex items-center gap-2">
                   <FaMailBulk className="lg:text-lg text-colors-thirdBg" />
                   <a
-                    href="mailto:CLIENTGMAIL@gmail.com"
+                    href="mailto:info@burjezamincc.com"
                     className="text-sm md:text-base hover:text-colors-secondTextColor transition-colors duration-300"
                   >
-                    CLIENTGMAIL@gmail.com
+                    info@burjezamincc.com
                   </a>
                 </li>
                 <li className="flex items-center gap-2">
@@ -165,18 +165,18 @@ function Footer({ getDirection }) {
 
         <div className="flex items-center justify-between text-xs sm:text-sm md:text-base gap-2">
           <p className="">
-            {t("allRights", { year: new Date().getFullYear() })}
-          </p>
-          <p className="">
             {t("developedBy")}
             <span className="text-colors-secondTextColor underline font-medium">
               <a
                 href="https://coder-irfan-portfolio.onrender.com"
                 target="_blank"
               >
-                Coder Irfan
+                {""} Coder Irfan
               </a>
             </span>
+          </p>
+          <p className="">
+            {t("allRights", { year: new Date().getFullYear() })}
           </p>
         </div>
       </footer>

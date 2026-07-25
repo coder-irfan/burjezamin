@@ -103,8 +103,8 @@ function Header() {
             <img
               src={`${
                 isScrolled
-                  ? "images/logo-blue-english.png"
-                  : "images/logo-white-english.png"
+                  ? "images/logo-blue-english.webp"
+                  : "images/logo-white-english.webp"
               }`}
               alt="logo"
               className="w-32 lg:w-44 object-contain"
@@ -119,7 +119,7 @@ function Header() {
               >
                 <div className="md:hidden absolute top-0 left-4 py-5">
                   <img
-                    src="images/logo-blue-english.png"
+                    src="images/logo-blue-english.webp"
                     alt="logo"
                     className="w-32 lg:w-44 object-contain"
                   />
@@ -277,11 +277,11 @@ function Header() {
             <div className="flex items-center gap-4">
               <div className="relative" ref={dropdownRef}>
                 <button
-                  className={`flex items-center gap-2 mr-12 md:mr-0 cursor-pointer hover:text-colors-textDarkGray transition-all duration-300 uppercase
+                  className={`flex items-center gap-2 mr-10 md:mr-0 cursor-pointer hover:text-colors-textDarkGray transition-all duration-300 uppercase
                     ${
                       isScrolled
-                        ? "md:text-colors-textDarkColor"
-                        : "md:text-colors-textLightColor"
+                        ? "text-colors-textDarkColor"
+                        : "text-colors-textLightColor"
                     }`}
                   onClick={() => setIsGlobeOpen(!isGlobeOpen)}
                   aria-expanded={isGlobeOpen}
@@ -292,7 +292,6 @@ function Header() {
                     svg
                     className="text-2xl"
                   />
-                  <span className="">{currentLang.code}</span>
                 </button>
 
                 {isGlobeOpen && (
@@ -334,7 +333,7 @@ function Header() {
 
             {!isOpen && (
               <div
-                className="absolute top-4 right-5 sm:right-6 text-[1.2rem] md:hidden border border-colors-buttonBg rounded-md p-1"
+                className="absolute top-4 right-5 sm:right-6 text-[1rem] md:hidden border border-colors-buttonBg rounded-md p-1"
                 onClick={() => setIsOpen(true)}
               >
                 <FaBars
