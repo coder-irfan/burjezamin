@@ -5,14 +5,10 @@ import {
   FaFacebook,
   FaYoutube,
   FaTelegram,
-  FaHome,
-  FaBuilding,
-  FaEnvelope,
   FaBars,
   FaTimes,
   FaPhoneAlt,
 } from "react-icons/fa";
-import { HiInformationCircle, HiServer } from "react-icons/hi";
 import ReactCountryFlag from "react-country-flag";
 import { useTranslation } from "react-i18next";
 
@@ -80,7 +76,7 @@ function Header() {
 
   return (
     <>
-      <header className="relative font-medium">
+      <header dir="ltr" className="relative font-medium">
         <div
           className={`2xl:max-w-[100rem] mx-auto px-4 sm:px-6 md:px-8 py-4 md:py-4 xl:px-16 fixed top-0 right-0 left-0 z-[60]
           transition-all duration-300
@@ -134,7 +130,7 @@ function Header() {
                     }`}
                   >
                     <li
-                      className={`hover-link font-semibold flex justify-center items-center gap-2
+                      className={`hover-link font-semibold
                     ${activeSection === "home" ? "active-link" : ""}`}
                     >
                       <a
@@ -144,14 +140,13 @@ function Header() {
                       >
                         {t("home")}
                       </a>
-                      <FaHome className="md:hidden text-lg opacity-80" />
                     </li>
 
                     <div className="md:hidden w-screen h-[1px] -mr-6 bg-colors-textDarkColor/40"></div>
 
                     <li className="hidden md:flex opacity-25">|</li>
                     <li
-                      className={`hover-link font-semibold flex justify-center items-center gap-2
+                      className={`hover-link font-semibold
                     ${activeSection === "about-us" ? "active-link" : ""}`}
                     >
                       <a
@@ -161,14 +156,13 @@ function Header() {
                       >
                         {t("about")}
                       </a>
-                      <HiInformationCircle className="md:hidden text-lg opacity-80" />
                     </li>
 
                     <div className="md:hidden w-screen h-[1px] -mr-6 bg-colors-textDarkColor/40"></div>
 
                     <li className="hidden md:flex opacity-25">|</li>
                     <li
-                      className={`hover-link font-semibold flex justify-center items-center gap-2
+                      className={`hover-link font-semibold
                     ${activeSection === "services" ? "active-link" : ""}`}
                     >
                       <a
@@ -178,14 +172,13 @@ function Header() {
                       >
                         {t("services")}
                       </a>
-                      <HiServer className="md:hidden text-lg opacity-80" />
                     </li>
 
                     <div className="md:hidden w-screen h-[1px] -mr-6 bg-colors-textDarkColor/40"></div>
 
                     <li className="hidden md:flex opacity-25">|</li>
                     <li
-                      className={`hover-link font-semibold flex justify-center items-center gap-2
+                      className={`hover-link font-semibold
                     ${activeSection === "projects" ? "active-link" : ""}`}
                     >
                       <a
@@ -195,14 +188,13 @@ function Header() {
                       >
                         {t("projects")}
                       </a>
-                      <FaBuilding className="md:hidden text-lg opacity-80" />
                     </li>
 
                     <div className="md:hidden w-screen h-[1px] -mr-6 bg-colors-textDarkColor/40"></div>
 
                     <li className="hidden md:flex opacity-25">|</li>
                     <li
-                      className={`hover-link font-semibold flex justify-center items-center gap-2
+                      className={`hover-link font-semibold
                     ${activeSection === "contact" ? "active-link" : ""}`}
                     >
                       <a
@@ -212,7 +204,6 @@ function Header() {
                       >
                         {t("contact")}
                       </a>
-                      <FaEnvelope className="md:hidden text-lg opacity-80" />
                     </li>
 
                     <div className="md:hidden w-screen h-[1px] -mr-6 bg-colors-textDarkColor/40"></div>

@@ -2,32 +2,52 @@ import { useEffect, Suspense, lazy } from "react";
 import { useTranslation } from "react-i18next";
 import { Routes, Route, Navigate, useParams } from "react-router-dom";
 
+// Above-the-fold components (Loaded immediately for instant LCP)
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Divider from "./components/Divider";
-import Divider2 from "./components/Divider2";
 import WhatsApp from "./components/WhatsApp";
 
-const Services = lazy(() => import("./components/Services"));
+// Critical section below fold (Loaded directly to prevent layout layout jumps)
+import Services from "./components/Services";
+import CoreValues from "./components/CoreValues";
+
+// Heavy or heavy-asset components lazy-loaded
+const Divider2 = lazy(() => import("./components/Divider2"));
 const Testimonial = lazy(() => import("./components/Testimonial"));
 const FAQ = lazy(() => import("./components/FAQ"));
-const CoreValues = lazy(() => import("./components/CoreValues"));
 const Projects = lazy(() => import("./components/Projects"));
 const Contact = lazy(() => import("./components/Contact"));
 const Location = lazy(() => import("./components/Location"));
 const NewsLetter = lazy(() => import("./components/NewsLetter"));
 const Footer = lazy(() => import("./components/Footer"));
 
+// Minimal Loader to avoid layout shifts
+const SectionLoader = () => (
+  <div className="w-full h-32 flex items-center justify-center opacity-30">
+    <div className="w-6 h-6 border-2 border-colors-secondTextColor border-t-transparent rounded-full animate-spin"></div>
+  </div>
+);
+
 const LanguageSync = () => {
   const { lang } = useParams();
   const { i18n } = useTranslation();
+
   useEffect(() => {
     if (!lang) return;
-    if (i18n.language !== lang) {
-      i18n.changeLanguage(lang);
+
+    const validLangs = ["en", "fa", "ps"];
+    const targetLang = validLangs.includes(lang) ? lang : "en";
+
+    if (i18n.language !== targetLang) {
+      i18n.changeLanguage(targetLang);
     }
-    document.documentElement.setAttribute("lang", lang);
+
+    // Set HTML lang & dir attributes dynamically for SEO & Accessibility
+    const isRtl = ["fa", "ps"].includes(targetLang);
+    document.documentElement.setAttribute("lang", targetLang);
+    document.documentElement.setAttribute("dir", isRtl ? "rtl" : "ltr");
   }, [lang, i18n]);
 
   return null;
@@ -37,37 +57,35 @@ const Landing = ({ getDirection }) => (
   <>
     <LanguageSync />
 
-    <Header />
+    <Header getDirection={getDirection} />
 
+    {/* Hero Section */}
     <div className="bg-hero-bg bg-cover bg-no-repeat bg-center relative">
       <Hero getDirection={getDirection} />
-      <div className="absolute inset-0 bg-colors-textDarkColor/70 lg:bg-colors-textDarkColor/75" />
+      <div className="absolute inset-0 bg-colors-textDarkColor/70 lg:bg-colors-textDarkColor/75 pointer-events-none" />
     </div>
 
+    {/* About Section */}
     <About getDirection={getDirection} />
 
+    {/* Divider 1 */}
     <div className="bg-divider-bg bg-cover bg-no-repeat bg-right relative">
       <Divider />
-      <div className="absolute inset-0 bg-colors-textDarkColor/70" />
+      <div className="absolute inset-0 bg-colors-textDarkColor/70 pointer-events-none" />
     </div>
 
-    <Suspense
-      fallback={
-        <div className="flex items-center justify-center py-24">
-          <div className="w-10 h-10 border-4 border-colors-secondTextColor border-t-transparent rounded-full animate-spin"></div>
-        </div>
-      }
-    >
-      <Services getDirection={getDirection} />
+    {/* Directly Loaded Core Sections */}
+    <Services getDirection={getDirection} />
+    <CoreValues getDirection={getDirection} />
 
+    {/* Lazy Loaded Lower Sections */}
+    <Suspense fallback={<SectionLoader />}>
       <div className="bg-divider2-bg bg-cover bg-no-repeat bg-top relative">
         <Divider2 />
-        <div className="absolute inset-0 bg-colors-textDarkColor/70" />
+        <div className="absolute inset-0 bg-colors-textDarkColor/70 pointer-events-none" />
       </div>
 
       <FAQ getDirection={getDirection} />
-
-      <CoreValues getDirection={getDirection} />
 
       <div className="bg-testimonial-bg bg-contain bg-no-repeat bg-center bg-colors-secondBg">
         <Testimonial getDirection={getDirection} />
@@ -93,8 +111,10 @@ const Landing = ({ getDirection }) => (
     <WhatsApp />
   </>
 );
+
 function App() {
   const { i18n } = useTranslation();
+
   const getDirection = () => {
     const rtlLanguages = ["fa", "ps"];
     return rtlLanguages.includes(i18n.language) ? "rtl" : "ltr";
@@ -102,9 +122,11 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/en" />} />
+      <Route path="/" element={<Navigate to="/en" replace />} />
       <Route path="/:lang" element={<Landing getDirection={getDirection} />} />
+      <Route path="*" element={<Navigate to="/en" replace />} />
     </Routes>
   );
 }
+
 export default App;

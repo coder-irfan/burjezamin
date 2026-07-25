@@ -137,7 +137,7 @@ function Footer({ getDirection }) {
           </div>
         </div>
 
-        <div className="relative">
+        <div dir="ltr" className="relative">
           <img
             src="images/truck.png"
             alt="truck"
