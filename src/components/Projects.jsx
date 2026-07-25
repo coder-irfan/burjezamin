@@ -271,7 +271,7 @@ function ProjectModal({
                     selectedProject.title?.[currentLang] ||
                     selectedProject.title?.en
                   }
-                  className="w-full h-60 sm:h-80 object-cover flex items-center justify-center text-center"
+                  className="w-full h-60 sm:h-80 object-cover flex items-center justify-center text-center bg-colors-secondBg"
                 />
               </div>
             )}
