@@ -1,15 +1,9 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import {
-  FaPaperPlane,
-  FaPhone,
-  FaSearchLocation,
-  FaMailBulk,
-  FaInstagram,
-  FaFacebook,
-  FaYoutube,
-  FaTelegram,
-} from "react-icons/fa";
+import { FaInstagram, FaFacebook, FaYoutube, FaTelegram } from "react-icons/fa";
+
+import { SendIcon, Phone, LocationEdit, MailIcon } from "lucide-react";
+
 import { useTranslation } from "react-i18next";
 
 function Contact({ getDirection }) {
@@ -88,10 +82,10 @@ function Contact({ getDirection }) {
                 <div className="flex flex-col gap-6 lg:gap-8">
                   <div className="flex items-center gap-3">
                     <p className="p-3 md:p-4 bg-colors-blueColorDark/70 rounded-full">
-                      <FaPhone className="md:text-xl text-colors-textLightColor" />
+                      <Phone className="w-5 h-5 text-colors-textLightColor" />
                     </p>
                     <div className="">
-                      <h4 className="font-medium">{t("phone")}</h4>
+                      <h4 className="font-bold">{t("phone")}</h4>
                       <a
                         href="tel:+93711580580"
                         className="text-sm md:text-base hover:text-colors-secondTextColor transition-colors duration-300"
@@ -102,10 +96,10 @@ function Contact({ getDirection }) {
                   </div>
                   <div className="flex items-center gap-3">
                     <p className="p-3 md:p-4 bg-colors-blueColorDark/70 rounded-full">
-                      <FaSearchLocation className="md:text-xl text-colors-textLightColor" />
+                      <LocationEdit className="w-5 h-5 text-colors-textLightColor" />
                     </p>
                     <div className="">
-                      <h4 className="font-medium">{t("location")}</h4>
+                      <h4 className="font-bold">{t("location")}</h4>
                       <p className="text-sm md:text-base">
                         {t("clientLocation")}
                       </p>
@@ -113,10 +107,10 @@ function Contact({ getDirection }) {
                   </div>
                   <div className="flex items-center gap-3">
                     <p className="p-3 md:p-4 bg-colors-blueColorDark/70 rounded-full">
-                      <FaMailBulk className="md:text-xl text-colors-textLightColor" />
+                      <MailIcon className="w-5 h-5 text-colors-textLightColor" />
                     </p>
                     <div className="">
-                      <h4 className="font-medium">{t("email")}</h4>
+                      <h4 className="font-bold">{t("email")}</h4>
                       <a
                         href="mailto:info@burjezamincc.com"
                         className="text-sm md:text-base hover:text-colors-secondTextColor transition-colors duration-300"
@@ -250,7 +244,7 @@ function Contact({ getDirection }) {
                 </div>
 
                 <button type="submit" className="button justify-center">
-                  {t("submit")} <FaPaperPlane />
+                  {t("submit")} <SendIcon className="w-5 h-5" />
                 </button>
 
                 {isSubmitted && (

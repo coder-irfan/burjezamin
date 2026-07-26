@@ -1,5 +1,6 @@
-import { FaPhone, FaSearchLocation, FaMailBulk } from "react-icons/fa";
+import { Phone, LocationEdit, MailIcon } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import AnimatedTracks from "./AnimatedTrucks";
 
 function Footer({ getDirection }) {
   const { t } = useTranslation();
@@ -9,9 +10,9 @@ function Footer({ getDirection }) {
       <footer
         id="contact"
         dir={getDirection()}
-        className="px-4 pt-10 pb-6 sm:px-6 md:pt-14 md:pb-4 md:px-8 lg:pt-14 lg:pb-6 xl:pt-16 lg:px-16 space-y-4 md:space-y-6 lg:space-y-6"
+        className="pt-10 pb-6 md:pt-14 md:pb-4 lg:pt-14 lg:pb-6 xl:pt-16 space-y-4 md:space-y-6 lg:space-y-6"
       >
-        <div className="flex flex-col lg:flex-row justify-center lg:justify-between gap-8 lg:gap-10 pb-8">
+        <div className="px-4 sm:px-6 md:px-8 lg:px-16 flex flex-col lg:flex-row justify-center lg:justify-between gap-8 lg:gap-10 pb-8">
           <div className="space-y-5 lg:space-y-5 max-w-md lg:max-w-xs flex flex-col items-start justify-start ">
             <img
               src="images/logo-blue-english.webp"
@@ -23,7 +24,7 @@ function Footer({ getDirection }) {
 
           <div className="flex gap-16 sm:gap-28 md:gap-36 lg:gap-10 xl:gap-28">
             <div className="space-y-2 lg:space-y-5">
-              <h3 className="text-h3 font-medium text-colors-textDarkGray">
+              <h3 className="text-h3 font-bold text-colors-textDarkGray">
                 {t("company")}
               </h3>
               <ul className="space-y-2 lg:space-y-3 text-sm xl:text-base">
@@ -50,7 +51,7 @@ function Footer({ getDirection }) {
               </ul>
             </div>
             <div className="space-y-2 lg:space-y-5">
-              <h3 className="text-h3 font-medium text-colors-textDarkGray">
+              <h3 className="text-h3 font-bold text-colors-textDarkGray">
                 {t("contactLink")}
               </h3>
               <ul className="space-y-2 lg:space-y-3 text-sm xl:text-base">
@@ -79,7 +80,7 @@ function Footer({ getDirection }) {
           </div>
           <div className="flex flex-col md:flex-row gap-12 sm:gap-28 md:gap-36 lg:gap-10 xl:gap-28">
             <div className="space-y-2 lg:space-y-5">
-              <h3 className="text-h3 font-medium text-colors-textDarkGray">
+              <h3 className="text-h3 font-bold text-colors-textDarkGray">
                 {t("support")}
               </h3>
               <ul className="space-y-2 lg:space-y-3 text-sm xl:text-base">
@@ -106,12 +107,12 @@ function Footer({ getDirection }) {
               </ul>
             </div>
             <div className="space-y-2 lg:space-y-5">
-              <h3 className="text-h3 font-medium text-colors-textDarkGray">
+              <h3 className="text-h3 font-bold text-colors-textDarkGray">
                 {t("contactInfo")}
               </h3>
               <ul className="space-y-2 lg:space-y-4 text-sm xl:text-base max-w-sm">
-                <li className="flex items-center gap-2">
-                  <FaPhone className="lg:text-lg text-colors-thirdBg" />
+                <li className="flex items-center gap-3">
+                  <Phone className="w-5 h-5 text-colors-blueColorVeryDark" />
                   <a
                     href="tel:+93711580580"
                     className="text-sm md:text-base hover:text-colors-secondTextColor transition-colors duration-300"
@@ -119,8 +120,8 @@ function Footer({ getDirection }) {
                     <bdi>+93 711 580 580</bdi>
                   </a>
                 </li>
-                <li className="flex items-center gap-2">
-                  <FaMailBulk className="lg:text-lg text-colors-thirdBg" />
+                <li className="flex items-center gap-3">
+                  <MailIcon className="w-5 h-5 text-colors-blueColorVeryDark" />
                   <a
                     href="mailto:info@burjezamincc.com"
                     className="text-sm md:text-base hover:text-colors-secondTextColor transition-colors duration-300"
@@ -128,8 +129,8 @@ function Footer({ getDirection }) {
                     info@burjezamincc.com
                   </a>
                 </li>
-                <li className="flex items-center gap-2">
-                  <FaSearchLocation className="text-lg lg:text-2xl text-colors-thirdBg" />
+                <li className="flex items-center gap-3">
+                  <LocationEdit className="w-5 h-5 text-colors-blueColorVeryDark" />
                   {t("clientLocation")}
                 </li>
               </ul>
@@ -137,33 +138,12 @@ function Footer({ getDirection }) {
           </div>
         </div>
 
-        <div dir="ltr" className="relative">
-          <img
-            src="images/truck.png"
-            alt="truck"
-            loading="lazy"
-            decoding="async"
-            className="absolute bottom-0 w-12 md:w-16 object-contain truck truck-1"
-          />
-          <img
-            src="images/truck2.png"
-            alt="truck"
-            loading="lazy"
-            decoding="async"
-            className="absolute bottom-0 w-12 md:w-16 object-contain truck truck-2"
-          />
-          <img
-            src="images/truck3.png"
-            alt="truck"
-            loading="lazy"
-            decoding="async"
-            className="absolute bottom-0 w-12 md:w-16 object-contain truck truck-3"
-          />
+        <AnimatedTracks />
 
-          <hr className="border border-colors-textDarkGray/80 mt-6" />
-        </div>
-
-        <div className="flex items-center justify-between text-xs sm:text-sm md:text-base gap-2">
+        <div
+          dir="ltr"
+          className="px-4 sm:px-6 md:px-8 lg:px-16 flex items-center justify-between text-xs sm:text-sm md:text-base gap-2"
+        >
           <p className="">
             {t("developedBy")}
             <span className="text-colors-secondTextColor underline font-medium">

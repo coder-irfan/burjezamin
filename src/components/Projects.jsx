@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { AnimatePresence, motion } from "framer-motion";
+
 import {
-  FiCalendar,
-  FiChevronDown,
-  FiChevronUp,
-  FiFolder,
-  FiSend,
-  FiX,
-} from "react-icons/fi";
+  Calendar,
+  Folder,
+  ChevronDown,
+  ChevronUp,
+  Send,
+  X,
+  LucideChevronsRight,
+} from "lucide-react";
 import { client, urlFor } from "../sanityClient";
 
 function DoneProjects({ getDirection }) {
@@ -173,7 +175,7 @@ function DoneProjects({ getDirection }) {
                       </span>
 
                       <button className="text-sm font-semibold text-colors-secondTextColor group-hover:translate-x-1 transition-transform flex items-center gap-1">
-                        {t("seeDetails")} →
+                        {t("seeDetails")} <LucideChevronsRight />
                       </button>
                     </div>
                   </div>
@@ -188,9 +190,9 @@ function DoneProjects({ getDirection }) {
               <button onClick={() => setShowAll(!showAll)} className="button">
                 <span>{showAll ? t("showLess") : t("showMore")}</span>
                 {showAll ? (
-                  <FiChevronUp className="text-xl" />
+                  <ChevronUp className="w-5 h-5" />
                 ) : (
-                  <FiChevronDown className="text-xl" />
+                  <ChevronDown className="w-5 h-5" />
                 )}
               </button>
             </div>
@@ -254,7 +256,7 @@ function ProjectModal({
                 className="pointer-events-auto bg-colors-bg/90 hover:bg-colors-secondBg text-colors-textDarkColor p-2 rounded-full shadow-lg transition-all transform hover:scale-110 active:scale-95"
                 aria-label="Close modal"
               >
-                <FiX className="text-lg" />
+                <X className="w-5 h-5" />
               </button>
             </div>
 
@@ -287,7 +289,7 @@ function ProjectModal({
               {/* Meta Tags */}
               <div className="flex flex-wrap items-center gap-4 text-xs font-medium text-colors-textDarkGray border-b border-colors-textDarkGray/10 pb-4">
                 <div className="flex items-center gap-1.5 bg-colors-secondBg px-3 py-1.5 rounded-lg">
-                  <FiCalendar className="text-colors-buttonBg" />
+                  <Calendar className="w-4 h-4 text-colors-buttonBg" />
                   <span>
                     {new Date(selectedProject._createdAt).toLocaleDateString(
                       currentLang === "fa" ? "fa-AF" : "en-US",
@@ -297,7 +299,7 @@ function ProjectModal({
                 </div>
 
                 <div className="flex items-center gap-1.5 bg-colors-secondBg px-3 py-1.5 rounded-lg">
-                  <FiFolder className="text-colors-buttonBg" />
+                  <Folder className="w-4 h-4 text-colors-buttonBg" />
                   <span>{t("completedProject") || "Completed"}</span>
                 </div>
               </div>
@@ -322,7 +324,7 @@ function ProjectModal({
                   className="w-full sm:w-auto"
                 >
                   <button className="button">
-                    <FiSend />
+                    <Send className="w-5 h-5" />
                     <span>{t("contactUs")}</span>
                   </button>
                 </a>

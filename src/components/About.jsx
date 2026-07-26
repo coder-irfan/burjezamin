@@ -9,7 +9,7 @@ function About({ getDirection }) {
       <section
         id="about-us"
         dir={getDirection()}
-        className="py-14 md:py-20 xl:py-28 px-4 md:px-6 lg:px-16"
+        className="py-14 md:py-20 xl:py-28 px-2 md:px-6 lg:px-16"
       >
         <div
           className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-10 bg-colors-secondBg p-6 md:p-10 lg:p-10 xl:p-8

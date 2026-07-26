@@ -1,7 +1,8 @@
 import { useRef } from "react";
-import { FaUser, FaStar } from "react-icons/fa";
-import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
+
+import { FaStar } from "react-icons/fa";
+import { User2, ChevronRight, ChevronLeft } from "lucide-react";
 
 function Testimonial({ getDirection }) {
   const { t } = useTranslation();
@@ -10,42 +11,42 @@ function Testimonial({ getDirection }) {
     {
       id: "1",
       text: t("test1_text"),
-      icon: <FaUser />,
-      name: "Ahmad Khan",
+      icon: <User2 />,
+      name: "Coder Irfan",
       Icon: <FaStar />,
     },
     {
       id: "2",
       text: t("test2_text"),
-      icon: <FaUser />,
+      icon: <User2 />,
       name: "Haji Karim",
       Icon: <FaStar />,
     },
     {
       id: "3",
       text: t("test3_text"),
-      icon: <FaUser />,
+      icon: <User2 />,
       name: "Zahir Ahmad",
       Icon: <FaStar />,
     },
     {
       id: "4",
       text: t("test4_text"),
-      icon: <FaUser />,
+      icon: <User2 />,
       name: "Mohammad Farid",
       Icon: <FaStar />,
     },
     {
       id: "5",
       text: t("test5_text"),
-      icon: <FaUser />,
+      icon: <User2 />,
       name: "Abdul Rahman",
       Icon: <FaStar />,
     },
     {
       id: "6",
       text: t("test6_text"),
-      icon: <FaUser />,
+      icon: <User2 />,
       name: "Sayed Ali",
       Icon: <FaStar />,
     },
@@ -96,10 +97,10 @@ function Testimonial({ getDirection }) {
           <div className="relative">
             <button
               onClick={() => scroll("left")}
-              className="absolute -left-2 sm:-left-4 md:-left-6 top-1/2 -translate-y-1/2 z-10 bg-colors-secondTextColor hover:bg-colors-secondTextColor/60 text-colors-textLightColor
+              className="absolute -left-2 sm:-left-4 md:-left-6 top-1/2 -translate-y-1/2 z-10 bg-colors-secondTextColor hover:bg-colors-secondTextColor/60 text-colors-textDarkColor
               transition-colors duration-300 rounded-full p-2 lg:p-4 shadow-md"
             >
-              <FaChevronLeft className="sm:text-lg lg:text-xl" />
+              <ChevronLeft className="w-5 h-5" />
             </button>
 
             <div
@@ -122,7 +123,7 @@ function Testimonial({ getDirection }) {
                       <h4 className="text-sm md:text-base font-semibold">
                         {testimonial.name}
                       </h4>
-                      <span className="flex items-center gap-1 text-xs md:text-sm text-yellow-400">
+                      <span className="flex items-center gap-1 text-sm text-yellow-400">
                         {testimonial.Icon}
                         {testimonial.Icon}
                         {testimonial.Icon}
@@ -137,9 +138,9 @@ function Testimonial({ getDirection }) {
 
             <button
               onClick={() => scroll("right")}
-              className="absolute -right-2 sm:-right-4 md:-right-6 top-1/2 -translate-y-1/2 z-10 bg-colors-secondTextColor hover:bg-colors-secondTextColor/60 text-colors-textLightColor transition-colors duration-300 rounded-full p-2 md:p-4 shadow-md"
+              className="absolute -right-2 sm:-right-4 md:-right-6 top-1/2 -translate-y-1/2 z-10 bg-colors-secondTextColor hover:bg-colors-secondTextColor/60 text-colors-textDarkColor transition-colors duration-300 rounded-full p-2 md:p-4 shadow-md"
             >
-              <FaChevronRight className="sm:text-lg lg:text-xl" />
+              <ChevronRight className="w-5 h-5" />
             </button>
           </div>
         </div>

@@ -18,6 +18,7 @@ export default {
           blueColorLightesh: "#3496fe",
           blueColorDarkesh: "#026fe3",
           blueColorDark: "#0156b0",
+          blueColorVeryDark: "#013e7f",
           thirdLightTextColor: "#67b0fe ", // Special White Blue Color
           red: "#F27070", // Error Color
         },

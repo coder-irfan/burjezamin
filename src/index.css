@@ -114,7 +114,7 @@ html[lang="fa"] h6 {
 }
 
 .error {
-  @apply text-xs md:text-sm text-colors-red;
+  @apply text-[10px] md:text-sm text-colors-red;
 }
 
 .scrollbar-hide::-webkit-scrollbar {

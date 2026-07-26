@@ -7,8 +7,10 @@ import {
   FaTelegram,
   FaBars,
   FaTimes,
-  FaPhoneAlt,
 } from "react-icons/fa";
+
+import { PhoneCall } from "lucide-react";
+
 import ReactCountryFlag from "react-country-flag";
 import { useTranslation } from "react-i18next";
 
@@ -78,7 +80,7 @@ function Header() {
     <>
       <header dir="ltr" className="relative font-medium">
         <div
-          className={`2xl:max-w-[100rem] mx-auto px-4 sm:px-6 md:px-8 py-4 md:py-4 xl:px-16 fixed top-0 right-0 left-0 z-[60]
+          className={`2xl:max-w-[100rem] mx-auto px-4 sm:px-6 md:px-8 py-4 md:py-3 xl:px-16 fixed top-0 right-0 left-0 z-[60]
           transition-all duration-300
           ${
             isScrolled
@@ -215,7 +217,7 @@ function Header() {
                       className="button"
                     >
                       {t("contactUs")}
-                      <FaPhoneAlt />
+                      <PhoneCall className="w-5 h-5" />
                     </a>
                   </div>
 
@@ -317,7 +319,7 @@ function Header() {
               <div className="hidden lg:flex items-center gap-2">
                 <a href="#contact" className="button">
                   {t("contactUs")}
-                  <FaPhoneAlt />
+                  <PhoneCall className="w-5 h-5" />
                 </a>
               </div>
             </div>

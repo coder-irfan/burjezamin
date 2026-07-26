@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { fadeUp, staggerContainer } from "../utils/animations";
 import { useTranslation } from "react-i18next";
 
+import { LucideChevronsRight } from "lucide-react";
+
 function Services({ getDirection }) {
   const isRTL = getDirection() === "rtl";
   const { t } = useTranslation();
@@ -117,8 +119,8 @@ function Services({ getDirection }) {
 
                   <div className="mt-auto pt-2 md:pt-4">
                     <a href="#projects">
-                      <button className="text-sm font-semibold text-colors-secondTextColor hover:underline">
-                        {t("viewMore")} →
+                      <button className="text-sm flex items-center gap-1 font-semibold text-colors-secondTextColor hover:underline">
+                        {t("viewMore")} <LucideChevronsRight />
                       </button>
                     </a>
                   </div>
