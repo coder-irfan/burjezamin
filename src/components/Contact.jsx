@@ -48,7 +48,7 @@ function Contact({ getDirection }) {
         <div className="space-y-10 sm:space-y-10 md:space-y-12 lg:space-y-14">
           <div className="text-center space-y-2 md:space-y-3">
             <div
-              className={`inline-block tracking-wider ${isRTL ? "border-r-4" : "border-l-4"} border-colors-secondTextColor`}
+              className={`inline-block tracking-wider ${isRTL ? "border-r-4" : "border-l-4"} border-colors-blueColorDark`}
             >
               <p className="mx-4 font-medium md:text-lg lg:text-xl">
                 {t("contactSection")}
@@ -57,7 +57,7 @@ function Contact({ getDirection }) {
 
             <h2 className="text-h2 font-semibold leading-tight">
               {t("contactTitle")}{" "}
-              <span className="text-colors-secondTextColor">
+              <span className="text-colors-blueColorDark">
                 {t("contactHighlight")}
               </span>{" "}
               {t("contactTitleEnd")}
@@ -81,8 +81,8 @@ function Contact({ getDirection }) {
                 </div>
                 <div className="flex flex-col gap-6 lg:gap-8">
                   <div className="flex items-center gap-3">
-                    <p className="p-3 md:p-4 bg-colors-blueColorDark/70 rounded-full">
-                      <Phone className="w-5 h-5 text-colors-textLightColor" />
+                    <p className="p-2 md:p-4 bg-colors-blueColorDark/70 rounded-full">
+                      <Phone className="w-4 h-4 md:w-5 md:h-5 text-colors-textLightColor" />
                     </p>
                     <div className="">
                       <h4 className="font-bold">{t("phone")}</h4>
@@ -95,8 +95,8 @@ function Contact({ getDirection }) {
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <p className="p-3 md:p-4 bg-colors-blueColorDark/70 rounded-full">
-                      <LocationEdit className="w-5 h-5 text-colors-textLightColor" />
+                    <p className="p-2 md:p-4 bg-colors-blueColorDark/70 rounded-full">
+                      <LocationEdit className="w-4 h-4 md:w-5 md:h-5 text-colors-textLightColor" />
                     </p>
                     <div className="">
                       <h4 className="font-bold">{t("location")}</h4>
@@ -106,8 +106,8 @@ function Contact({ getDirection }) {
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <p className="p-3 md:p-4 bg-colors-blueColorDark/70 rounded-full">
-                      <MailIcon className="w-5 h-5 text-colors-textLightColor" />
+                    <p className="p-2 md:p-4 bg-colors-blueColorDark/70 rounded-full">
+                      <MailIcon className="w-4 h-4 md:w-5 md:h-5 text-colors-textLightColor" />
                     </p>
                     <div className="">
                       <h4 className="font-bold">{t("email")}</h4>
@@ -119,7 +119,7 @@ function Contact({ getDirection }) {
                       </a>
                     </div>
                   </div>
-                  <div className="flex flex-wrap gap-2 lg:gap-4 text-xl lg:text-2xl">
+                  <div className="flex flex-wrap gap-2 lg:gap-4 text-lg lg:text-2xl">
                     <a
                       href="https://www.instagram.com/"
                       className="media-link"
@@ -244,7 +244,7 @@ function Contact({ getDirection }) {
                 </div>
 
                 <button type="submit" className="button justify-center">
-                  {t("submit")} <SendIcon className="w-5 h-5" />
+                  {t("submit")} <SendIcon className="w-4 h-4 md:w-5 md:h-5" />
                 </button>
 
                 {isSubmitted && (

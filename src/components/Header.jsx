@@ -119,7 +119,7 @@ function Header() {
                   <img
                     src="images/logo-blue-english.webp"
                     alt="logo"
-                    className="w-32 lg:w-44 object-contain"
+                    className="w-44 object-contain"
                   />
                 </div>
                 <div className="flex flex-col md:flex-row items-end gap-8">
@@ -295,7 +295,7 @@ function Header() {
                     <ul className="">
                       {languages.map((lang) => (
                         <li
-                          className="px-3 py-2 hover:bg-colors-buttonHover/50 hover:rounded-md cursor-pointer flex items-center gap-3 transition-all duration-200"
+                          className="px-3 py-2 hover:bg-colors-blueColorDark hover:text-colors-textLightColor hover:rounded-md cursor-pointer flex items-center gap-3 transition-all duration-200"
                           key={lang.code}
                           onClick={() => {
                             i18n.changeLanguage(lang.code);

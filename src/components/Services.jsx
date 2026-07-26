@@ -64,7 +64,7 @@ function Services({ getDirection }) {
         <div className="space-y-6 lg:space-y-10">
           <div className="text-center space-y-2 md:space-y-3">
             <div
-              className={`inline-block tracking-wider ${isRTL ? "border-r-4" : "border-l-4"} border-colors-secondTextColor`}
+              className={`inline-block tracking-wider ${isRTL ? "border-r-4" : "border-l-4"} border-colors-blueColorDarkesh`}
             >
               <p className="mx-4 font-medium md:text-lg lg:text-xl">
                 {t("servicesLabel")}
@@ -72,7 +72,7 @@ function Services({ getDirection }) {
             </div>
             <h2 className="text-h2 font-bold leading-tight">
               {t("servicesTitle")}
-              <span className="text-colors-secondTextColor">
+              <span className="text-colors-blueColorDark">
                 {t("servicesName")}
               </span>
             </h2>
@@ -105,7 +105,7 @@ function Services({ getDirection }) {
                 </div>
 
                 <div className="p-6 flex flex-col flex-1 space-y-2 relative">
-                  <span className="absolute -top-8 right-4 text-6xl font-bold text-colors-buttonBg/50">
+                  <span className="absolute -top-8 right-4 text-6xl font-bold text-colors-buttonBg/60">
                     0{index + 1}
                   </span>
 

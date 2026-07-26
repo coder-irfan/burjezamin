@@ -92,7 +92,7 @@ function DoneProjects({ getDirection }) {
         <div
           className={`inline-block tracking-wider ${
             isRTL ? "border-r-4" : "border-l-4"
-          } border-colors-secondTextColor`}
+          } border-colors-blueColorDarkesh`}
         >
           <p className="mx-4 font-medium md:text-lg lg:text-xl text-colors-textDarkColor">
             {t("projectsSection")}
@@ -101,7 +101,7 @@ function DoneProjects({ getDirection }) {
 
         <h2 className="text-h2 font-semibold leading-tight text-colors-textDarkColor">
           {t("projectsTitle")}{" "}
-          <span className="text-colors-secondTextColor">
+          <span className="text-colors-blueColorDark">
             {t("projectsHighlight")}
           </span>
         </h2>
@@ -288,7 +288,7 @@ function ProjectModal({
               {/* Meta Tags */}
               <div className="flex flex-wrap items-center gap-4 text-xs font-medium text-colors-textDarkGray border-b border-colors-textDarkGray/10 pb-4">
                 <div className="flex items-center gap-1.5 bg-colors-secondBg px-3 py-1.5 rounded-lg">
-                  <Calendar className="w-4 h-4 text-colors-buttonBg" />
+                  <Calendar className="w-4 h-4 text-colors-blueColorLightesh" />
                   <span>
                     {new Date(selectedProject._createdAt).toLocaleDateString(
                       currentLang === "fa" ? "fa-AF" : "en-US",
@@ -298,7 +298,7 @@ function ProjectModal({
                 </div>
 
                 <div className="flex items-center gap-1.5 bg-colors-secondBg px-3 py-1.5 rounded-lg">
-                  <Folder className="w-4 h-4 text-colors-buttonBg" />
+                  <Folder className="w-4 h-4 text-colors-blueColorLightesh" />
                   <span>{t("completedProject") || "Completed"}</span>
                 </div>
               </div>

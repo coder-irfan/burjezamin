@@ -112,25 +112,25 @@ function Footer({ getDirection }) {
               </h3>
               <ul className="space-y-2 lg:space-y-4 text-sm xl:text-base max-w-sm">
                 <li className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-colors-blueColorVeryDark" />
+                  <Phone className="w-5 h-5 text-colors-blueColorDark" />
                   <a
                     href="tel:+93711580580"
-                    className="text-sm md:text-base hover:text-colors-secondTextColor transition-colors duration-300"
+                    className="text-sm md:text-base hover:text-colors-blueColorDark transition-colors duration-300"
                   >
                     <bdi>+93 711 580 580</bdi>
                   </a>
                 </li>
                 <li className="flex items-center gap-3">
-                  <MailIcon className="w-5 h-5 text-colors-blueColorVeryDark" />
+                  <MailIcon className="w-5 h-5 text-colors-blueColorDark" />
                   <a
                     href="mailto:info@burjezamincc.com"
-                    className="text-sm md:text-base hover:text-colors-secondTextColor transition-colors duration-300"
+                    className="text-sm md:text-base hover:text-colors-blueColorDark transition-colors duration-300"
                   >
                     info@burjezamincc.com
                   </a>
                 </li>
                 <li className="flex items-center gap-3">
-                  <LocationEdit className="w-5 h-5 text-colors-blueColorVeryDark" />
+                  <LocationEdit className="w-5 h-5 text-colors-blueColorDark" />
                   {t("clientLocation")}
                 </li>
               </ul>
@@ -146,7 +146,7 @@ function Footer({ getDirection }) {
         >
           <p className="">
             {t("developedBy")}
-            <span className="text-colors-secondTextColor underline font-medium">
+            <span className="text-colors-blueColorDark hover:text-colors-blueColorLightesh transition duration-200 underline font-medium">
               <a
                 href="https://coder-irfan-portfolio.onrender.com"
                 target="_blank"

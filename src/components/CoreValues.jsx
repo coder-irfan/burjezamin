@@ -32,7 +32,7 @@ function CoreValues({ getDirection }) {
           <div
             className={`inline-block tracking-wider ${
               isRTL ? "border-r-4" : "border-l-4"
-            } border-colors-secondTextColor`}
+            } border-colors-blueColorDarkesh`}
           >
             <span className="mx-4 font-medium md:text-lg lg:text-xl">
               {t("coreValuesSubtitle")}
@@ -41,7 +41,7 @@ function CoreValues({ getDirection }) {
 
           <h2 className="text-h2 font-bold">
             {t("coreValuesTitle")}{" "}
-            <span className="text-colors-secondTextColor">
+            <span className="text-colors-blueColorDark">
               {t("coreValuesHighlight")}
             </span>
           </h2>

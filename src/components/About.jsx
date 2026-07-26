@@ -20,21 +20,26 @@ function About({ getDirection }) {
             alt="hat"
             loading="lazy"
             decoding="async"
-            className="absolute -top-8 w-20 left-0 md:w-20 md:-top-12 lg:-top-20 xl:-top-20 lg:left-6 lg:w-28"
+            className="absolute -top-8 w-20 end-0 md:w-20 md:-top-12 lg:-top-20 xl:-top-20 lg:end-6 lg:w-28"
           />
           <div
             className={`max-w-[500px] md:max-w-[350px] lg:max-w-[400px] xl:max-w-xl mx-auto space-y-4 lg:space-y-6 text-center ${isRTL ? "md:text-right" : "md:text-left"}`}
           >
             <div className="space-y-2">
               <div
-                className={`inline-block tracking-wider ${isRTL ? "border-r-4" : "border-l-4"} border-colors-secondTextColor`}
+                className={`inline-block tracking-wider ${isRTL ? "border-r-4" : "border-l-4"} border-colors-blueColorDarkesh`}
               >
                 <p className="mx-4 font-medium md:text-lg lg:text-xl">
                   {t("aboutTag")}
                 </p>
               </div>
+
               <h2 className="font-bold text-2xl md:text-3xl lg:text-[2.4rem] xl:text-[2.7rem] md:leading-[1.3]">
                 {t("aboutTitle")}
+                <span className="text-colors-blueColorDark">
+                  {" "}
+                  {t("aboutName")}
+                </span>
               </h2>
             </div>
 
