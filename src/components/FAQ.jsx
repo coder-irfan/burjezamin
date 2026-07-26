@@ -72,7 +72,7 @@ function FAQ({ getDirection }) {
               <div
                 key={faq.id}
                 onClick={() => toggleFaq(index)}
-                className="group relative max-w-4xl mx-auto cursor-pointer rounded-xl border border-colors-thirdBg/40 bg-colors-bg/70 backdrop-blur-md transition-all duration-300 hover:border-colors-secondTextColor/40 hover:shadow-lg"
+                className="group relative max-w-4xl mx-auto cursor-pointer rounded-xl border border-colors-thirdBg/40 bg-colors-bg/70 backdrop-blur-md transition-all duration-300 hover:border-colors-blueColorDark/40 hover:shadow-lg"
               >
                 <div className="p-3 md:p-4 lg:p-5">
                   <div className="flex items-start gap-4">
@@ -80,7 +80,7 @@ function FAQ({ getDirection }) {
                       initial={false}
                       animate={{ rotate: isOpened ? 180 : 0 }}
                       transition={{ duration: 0.25 }}
-                      className={`mt-1 text-colors-secondTextColor rounded-lg transition-colors duration-300`}
+                      className={`mt-1 text-colors-blueColorDark rounded-lg transition-colors duration-300`}
                     >
                       {isOpened ? <FaTimes /> : <FaPlus />}
                     </motion.div>

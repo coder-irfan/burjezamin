@@ -22,7 +22,7 @@ function NewsLetter() {
   return (
     <>
       <section className="px-4 py-10 sm:px-6 md:py-12 md:px-8 lg:py-16 xl:py-16 lg:px-16">
-        <div className="bg-colors-thirdBg px-4 py-6 lg:py-10 xl:py-16 rounded-lg relative overflow-hidden">
+        <div className="bg-colors-blueColorDark px-4 py-6 lg:py-10 xl:py-16 rounded-lg relative overflow-hidden">
           <img
             src="images/line1.webp"
             alt="line"
@@ -60,7 +60,7 @@ function NewsLetter() {
               <button
                 onClick={handleWhatsApp}
                 className="px-6 md:px-7 py-2 md:py-2.5 text-sm md:text-base font-medium rounded-full 
-                bg-colors-buttonBg hover:bg-colors-buttonHover transition-colors duration-300 text-colors-textDarkColor absolute top-1/2 right-1 -translate-y-1/2"
+                bg-colors-buttonBg hover:bg-colors-buttonHover transition-colors duration-300 text-colors-textDarkColor absolute top-1/2 end-1 -translate-y-1/2"
               >
                 {t("newsletterSend")}
               </button>

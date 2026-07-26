@@ -159,7 +159,7 @@ function DoneProjects({ getDirection }) {
                   </div>
 
                   <div className="p-6 space-y-3">
-                    <h3 className="text-lg md:text-xl font-semibold text-colors-textDarkColor group-hover:text-colors-secondTextColor transition-colors">
+                    <h3 className="text-lg md:text-xl font-semibold text-colors-textDarkColor group-hover:text-colors-blueColorDark transition-colors">
                       {projectTitle}
                     </h3>
 
@@ -261,18 +261,24 @@ function ProjectModal({
             {/* Modal Image Header - Reduced image height so content fits comfortably */}
             {selectedProject.image && (
               <div className="-mt-20 relative">
-                <img
-                  src={urlFor(selectedProject.image)
-                    .width(1200)
-                    .quality(85)
-                    .auto("format")
-                    .url()}
-                  alt={
-                    selectedProject.title?.[currentLang] ||
-                    selectedProject.title?.en
-                  }
-                  className="w-full h-60 sm:h-80 object-cover flex items-center justify-center text-center bg-colors-secondBg"
-                />
+                <div className="w-full h-60 sm:h-80 bg-colors-secondBg flex items-center justify-center text-center overflow-hidden rounded-xl">
+                  <img
+                    src={urlFor(selectedProject.image)
+                      .width(1200)
+                      .quality(85)
+                      .auto("format")
+                      .url()}
+                    alt={
+                      selectedProject.title?.[currentLang] ||
+                      selectedProject.title?.en ||
+                      "Project image"
+                    }
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      e.currentTarget.style.display = "none";
+                    }}
+                  />
+                </div>
               </div>
             )}
 
@@ -281,7 +287,7 @@ function ProjectModal({
               {/* Meta Tags */}
               <div className="flex flex-wrap items-center gap-4 text-xs font-medium text-colors-textDarkGray border-b border-colors-textDarkGray/10 pb-4">
                 <div className="flex items-center gap-1.5 bg-colors-secondBg px-3 py-1.5 rounded-lg">
-                  <FiCalendar className="text-colors-secondTextColor" />
+                  <FiCalendar className="text-colors-buttonBg" />
                   <span>
                     {new Date(selectedProject._createdAt).toLocaleDateString(
                       currentLang === "fa" ? "fa-AF" : "en-US",
@@ -291,7 +297,7 @@ function ProjectModal({
                 </div>
 
                 <div className="flex items-center gap-1.5 bg-colors-secondBg px-3 py-1.5 rounded-lg">
-                  <FiFolder className="text-colors-secondTextColor" />
+                  <FiFolder className="text-colors-buttonBg" />
                   <span>{t("completedProject") || "Completed"}</span>
                 </div>
               </div>

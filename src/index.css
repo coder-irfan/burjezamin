@@ -110,7 +110,7 @@ html[lang="fa"] h6 {
 }
 
 .media-link {
-  @apply p-2 md:p-2.5 border-2 border-colors-secondTextColor hover:bg-colors-secondTextColor rounded-full transition-all duration-300;
+  @apply p-2 md:p-2.5 border-2 border-colors-blueColorDark hover:bg-colors-blueColorDark hover:text-colors-textLightColor rounded-full transition-all duration-300;
 }
 
 .error {

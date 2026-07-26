@@ -87,8 +87,8 @@ function Contact({ getDirection }) {
                 </div>
                 <div className="flex flex-col gap-6 lg:gap-8">
                   <div className="flex items-center gap-3">
-                    <p className="p-3 md:p-4 bg-colors-buttonBg/70 rounded-full">
-                      <FaPhone className="md:text-xl" />
+                    <p className="p-3 md:p-4 bg-colors-blueColorDark/70 rounded-full">
+                      <FaPhone className="md:text-xl text-colors-textLightColor" />
                     </p>
                     <div className="">
                       <h4 className="font-medium">{t("phone")}</h4>
@@ -101,8 +101,8 @@ function Contact({ getDirection }) {
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <p className="p-3 md:p-4 bg-colors-buttonBg/70 rounded-full">
-                      <FaSearchLocation className="md:text-xl" />
+                    <p className="p-3 md:p-4 bg-colors-blueColorDark/70 rounded-full">
+                      <FaSearchLocation className="md:text-xl text-colors-textLightColor" />
                     </p>
                     <div className="">
                       <h4 className="font-medium">{t("location")}</h4>
@@ -112,8 +112,8 @@ function Contact({ getDirection }) {
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <p className="p-3 md:p-4 bg-colors-buttonBg/70 rounded-full">
-                      <FaMailBulk className="md:text-xl" />
+                    <p className="p-3 md:p-4 bg-colors-blueColorDark/70 rounded-full">
+                      <FaMailBulk className="md:text-xl text-colors-textLightColor" />
                     </p>
                     <div className="">
                       <h4 className="font-medium">{t("email")}</h4>

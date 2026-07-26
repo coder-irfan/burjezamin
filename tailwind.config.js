@@ -14,6 +14,11 @@ export default {
           textDarkGray: "#383838", // Dark Text Color
           textLightColor: "#ffffff", // White Text Color
           secondTextColor: "#FDB900", // Special Text Color
+          blueColorLight: "#9acafe",
+          blueColorLightesh: "#3496fe",
+          blueColorDarkesh: "#026fe3",
+          blueColorDark: "#0156b0",
+          thirdLightTextColor: "#67b0fe ", // Special White Blue Color
           red: "#F27070", // Error Color
         },
       },

@@ -96,7 +96,7 @@ function Testimonial({ getDirection }) {
           <div className="relative">
             <button
               onClick={() => scroll("left")}
-              className="absolute -left-2 sm:-left-4 md:-left-6 top-1/2 -translate-y-1/2 z-10 bg-colors-buttonBg hover:bg-colors-buttonHover
+              className="absolute -left-2 sm:-left-4 md:-left-6 top-1/2 -translate-y-1/2 z-10 bg-colors-secondTextColor hover:bg-colors-secondTextColor/60 text-colors-textLightColor
               transition-colors duration-300 rounded-full p-2 lg:p-4 shadow-md"
             >
               <FaChevronLeft className="sm:text-lg lg:text-xl" />
@@ -137,7 +137,7 @@ function Testimonial({ getDirection }) {
 
             <button
               onClick={() => scroll("right")}
-              className="absolute -right-2 sm:-right-4 md:-right-6 top-1/2 -translate-y-1/2 z-10 bg-colors-buttonBg hover:bg-colors-buttonHover transition-colors duration-300 rounded-full p-2 md:p-4 shadow-md"
+              className="absolute -right-2 sm:-right-4 md:-right-6 top-1/2 -translate-y-1/2 z-10 bg-colors-secondTextColor hover:bg-colors-secondTextColor/60 text-colors-textLightColor transition-colors duration-300 rounded-full p-2 md:p-4 shadow-md"
             >
               <FaChevronRight className="sm:text-lg lg:text-xl" />
             </button>
