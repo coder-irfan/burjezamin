@@ -225,7 +225,7 @@ function ProjectModal({
     <AnimatePresence>
       {selectedProject && (
         <div
-          className="fixed inset-0 -top-12 md:-top-16 z-[100] flex items-center justify-center p-4 sm:p-6 py-8 sm:py-12 overflow-hidden"
+          className="fixed inset-0 -top-10 md:-top-16 z-[100] flex items-center justify-center p-4 sm:p-6 py-8 sm:py-12 overflow-hidden"
           dir={getDirection()}
         >
           {/* Animated Backdrop Blur */}
@@ -238,7 +238,6 @@ function ProjectModal({
             onClick={() => setSelectedProject(null)}
           />
 
-          {/* Modal Container - Added `my-auto`, `max-h-[80vh]`, and balanced inner spacing */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
