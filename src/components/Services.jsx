@@ -100,7 +100,7 @@ function Services({ getDirection }) {
                     alt={item.title}
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-64 lg:h-72 object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-64 lg:h-72 object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                 </div>
 
@@ -109,7 +109,7 @@ function Services({ getDirection }) {
                     0{index + 1}
                   </span>
 
-                  <h3 className="text-lg md:text-xl font-semibold">
+                  <h3 className="text-lg md:text-xl font-semibold text-colors-textDarkColor group-hover:text-colors-blueColorDark transition-colors">
                     {item.title}
                   </h3>
 
@@ -119,7 +119,7 @@ function Services({ getDirection }) {
 
                   <div className="mt-auto pt-2 md:pt-4">
                     <a href="#projects">
-                      <button className="text-sm flex items-center gap-1 font-semibold text-colors-secondTextColor hover:underline">
+                      <button className="text-sm font-semibold text-colors-secondTextColor hover:underline group-hover:translate-x-1 transition-transform flex items-center gap-1">
                         {t("viewMore")} <LucideChevronsRight />
                       </button>
                     </a>

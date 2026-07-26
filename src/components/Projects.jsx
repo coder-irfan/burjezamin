@@ -262,7 +262,7 @@ function ProjectModal({
             {/* Modal Image Header - Reduced image height so content fits comfortably */}
             {selectedProject.image && (
               <div className="-mt-20 relative">
-                <div className="w-full h-80 lg:h-[350px] bg-colors-secondBg flex items-center justify-center text-center overflow-hidden rounded-t-xl">
+                <div className="w-full h-80 lg:h-[450px] bg-colors-secondBg flex items-center justify-center text-center overflow-hidden rounded-t-xl">
                   <img
                     src={urlFor(selectedProject.image)
                       .width(1200)
