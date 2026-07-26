@@ -105,7 +105,7 @@ function Services({ getDirection }) {
                 </div>
 
                 <div className="p-6 flex flex-col flex-1 space-y-2 relative">
-                  <span className="absolute -top-8 right-4 text-6xl font-bold text-colors-buttonBg/60">
+                  <span className="absolute -top-8 right-4 text-6xl font-bold text-colors-buttonBg/70">
                     0{index + 1}
                   </span>
 
