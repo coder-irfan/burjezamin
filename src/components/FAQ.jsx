@@ -102,7 +102,7 @@ function FAQ({ getDirection }) {
                         className="overflow-hidden"
                       >
                         <p
-                          className={`pt-4 text-[13px] md:text-base text-colors-textDarkGray leading-relaxed ${isRTL ? "border-r-2 mr-2 pr-4" : "border-l-2 ml-2 pl-4"} border-colors-thirdBg/40`}
+                          className={`pt-4 text-[13px] md:text-base text-colors-textDarkGray leading-relaxed ${isRTL ? "border-r-2 mr-2 pr-4" : "border-l-2 ml-2 pl-4"} border-colors-blueColorDark/20`}
                         >
                           {faq.answer}
                         </p>
