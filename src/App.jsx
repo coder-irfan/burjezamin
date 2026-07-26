@@ -60,7 +60,7 @@ const Landing = ({ getDirection }) => (
     <Header getDirection={getDirection} />
 
     {/* Hero Section */}
-    <div className="bg-hero-bg bg-cover bg-no-repeat bg-top relative">
+    <div className="bg-hero-bg bg-cover bg-no-repeat bg-center relative">
       <Hero getDirection={getDirection} />
       <div className="absolute inset-0 bg-colors-textDarkColor/70 lg:bg-colors-textDarkColor/75 pointer-events-none" />
     </div>
