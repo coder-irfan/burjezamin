@@ -20,7 +20,7 @@ function About({ getDirection }) {
             alt="hat"
             loading="lazy"
             decoding="async"
-            className="absolute -top-8 w-20 end-0 md:w-20 md:-top-12 lg:-top-20 xl:-top-20 lg:end-6 lg:w-28"
+            className="absolute -top-8 w-20 end-0 md:w-20 md:-top-12 xl:-top-16 lg:end-6 lg:w-28"
           />
           <div
             className={`max-w-[500px] md:max-w-[350px] lg:max-w-[400px] xl:max-w-xl mx-auto space-y-4 lg:space-y-6 text-center ${isRTL ? "md:text-right" : "md:text-left"}`}

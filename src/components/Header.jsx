@@ -255,11 +255,11 @@ function Header() {
 
                 {isOpen && (
                   <div
-                    className="absolute top-4 right-5 sm:right-6 text-[1.4rem] md:hidden border border-colors-buttonBg rounded-md p-1"
+                    className="absolute top-5 right-5 sm:right-6 text-[1.4rem] md:hidden border border-colors-blueColorDark rounded-md p-1"
                     onClick={() => setIsOpen(false)}
                   >
                     <FaTimes
-                      className="cursor-pointer text-colors-buttonBg"
+                      className="cursor-pointer text-colors-blueColorDark"
                       aria-label="Close menu"
                     />
                   </div>
@@ -326,12 +326,12 @@ function Header() {
 
             {!isOpen && (
               <div
-                className="absolute top-4 right-5 sm:right-6 text-[1rem] md:hidden border border-colors-buttonBg rounded-md p-1"
+                className={`absolute top-4 right-5 sm:right-6 text-[1rem] md:hidden border rounded-md p-1 ${isScrolled ? "border-colors-blueColorDark" : "border-colors-textLightColor"}`}
                 onClick={() => setIsOpen(true)}
               >
                 <FaBars
                   aria-label="Open menu"
-                  className="cursor-pointer text-colors-buttonBg"
+                  className={`cursor-pointer ${isScrolled ? "text-colors-blueColorDark" : "text-colors-textLightColor"}`}
                 />
               </div>
             )}
