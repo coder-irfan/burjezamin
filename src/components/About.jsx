@@ -33,7 +33,7 @@ function About({ getDirection }) {
                   {t("aboutTag")}
                 </p>
               </div>
-              <h2 className="font-semibold text-2xl md:text-3xl lg:text-[2.4rem] xl:text-[2.7rem] md:leading-[1.3]">
+              <h2 className="font-bold text-2xl md:text-3xl lg:text-[2.4rem] xl:text-[2.7rem] md:leading-[1.3]">
                 {t("aboutTitle")}
               </h2>
             </div>

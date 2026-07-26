@@ -37,7 +37,7 @@ function Hero({ getDirection }) {
                 />
               </p>
             </div>
-            <h1 className="text-h1 font-semibold leading-tight">
+            <h1 className="text-h1 font-black leading-tight">
               <span className="text-colors-secondTextColor">
                 {t("heroTitleHighlight")}
               </span>

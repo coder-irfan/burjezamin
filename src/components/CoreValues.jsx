@@ -72,7 +72,7 @@ function CoreValues({ getDirection }) {
                 </div>
 
                 <div className="space-y-2">
-                  <h3 className="text-h3 text-colors-textDarkColor font-semibold">
+                  <h3 className="text-h3 text-colors-textDarkColor font-bold">
                     {t(`coreValues.${value.key}.title`)}
                   </h3>
 

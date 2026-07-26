@@ -70,7 +70,7 @@ function Services({ getDirection }) {
                 {t("servicesLabel")}
               </p>
             </div>
-            <h2 className="text-h2 font-semibold leading-tight">
+            <h2 className="text-h2 font-bold leading-tight">
               {t("servicesTitle")}
               <span className="text-colors-secondTextColor">
                 {t("servicesName")}
