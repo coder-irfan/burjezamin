@@ -146,11 +146,9 @@ function DoneProjects({ getDirection }) {
                 >
                   <div className="relative overflow-hidden">
                     {imageUrl && (
-                      <img
+                      <ProjectImage
                         src={imageUrl}
                         alt={projectTitle}
-                        loading="lazy"
-                        decoding="async"
                         className="w-full h-64 lg:h-72 object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                     )}
@@ -263,7 +261,7 @@ function ProjectModal({
             {selectedProject.image && (
               <div className="-mt-20 relative">
                 <div className="w-full h-80 lg:h-[450px] bg-colors-secondBg flex items-center justify-center text-center overflow-hidden rounded-t-xl">
-                  <img
+                  <ProjectImage
                     src={urlFor(selectedProject.image)
                       .width(1200)
                       .quality(85)
@@ -275,9 +273,6 @@ function ProjectModal({
                       "Project image"
                     }
                     className="w-full h-full object-cover"
-                    onError={(e) => {
-                      e.currentTarget.style.display = "none";
-                    }}
                   />
                 </div>
               </div>
@@ -333,5 +328,32 @@ function ProjectModal({
         </div>
       )}
     </AnimatePresence>
+  );
+}
+
+function ProjectImage({ src, alt, className }) {
+  const [loaded, setLoaded] = useState(false);
+
+  return (
+    <div className="relative w-full h-full overflow-hidden">
+      {/* Skeleton Loading State */}
+      {!loaded && (
+        <div className="absolute inset-0 bg-colors-textDarkGray/50 animate-pulse" />
+      )}
+
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+        onLoad={() => setLoaded(true)}
+        onError={(e) => {
+          e.currentTarget.style.display = "none";
+        }}
+        className={`${className} transition-opacity duration-500 ${
+          loaded ? "opacity-100" : "opacity-0"
+        }`}
+      />
+    </div>
   );
 }

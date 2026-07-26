@@ -17,7 +17,7 @@ function Footer({ getDirection }) {
             <img
               src="images/logo-blue-english.webp"
               alt="logo"
-              className="w-36 md:w-44 lg:w-52 object-contain"
+              className="w-44 lg:w-52 object-contain"
             />
             <p className="text-sm lg:text-base">{t("footerDesc")}</p>
           </div>
