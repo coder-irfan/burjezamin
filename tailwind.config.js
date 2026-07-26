@@ -8,19 +8,18 @@ export default {
           bg: "#ffffff", // Body
           secondBg: "#ececec", // Sections
           thirdBg: "#051441", // Special Bg Color
-          buttonBg: "#ffcb3d", // Button Bg Color
-          buttonHover: "#fdb900", // Button Hover
+          buttonBg: "rgb(225, 182, 95)", // Button Bg Color
+          buttonHover: "rgb(225, 182, 75)", // Button Hover
           textDarkColor: "#131314", // Dark Text Color
           textDarkGray: "#383838", // Dark Text Color
           textLightColor: "#ffffff", // White Text Color
-          secondTextColor: "#FDB900", // Special Text Color
+          secondTextColor: "rgb(225, 182, 95)", // Special Text Color
           blueColorLight: "hsl(211, 98%, 97%)",
           blueColor: "hsl(211, 98%, 88%)",
           blueColorLightesh: "#3496fe",
           blueColorDarkesh: "#026fe3",
           blueColorDark: "#0156b0",
           blueColorVeryDark: "#013e7f",
-          thirdLightTextColor: "#67b0fe ", // Special White Blue Color
           red: "#F27070", // Error Color
         },
       },
