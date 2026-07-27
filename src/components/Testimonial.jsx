@@ -120,10 +120,10 @@ function Testimonial({ getDirection }) {
                       {testimonial.icon}
                     </p>
                     <div className="space-y-1">
-                      <h4 className="text-sm md:text-base font-semibold">
+                      <p className="text-description font-semibold">
                         {testimonial.name}
-                      </h4>
-                      <span className="flex items-center gap-1 text-sm text-yellow-400">
+                      </p>
+                      <span className="flex items-center gap-1 text-xs md:text-sm text-yellow-400">
                         {testimonial.Icon}
                         {testimonial.Icon}
                         {testimonial.Icon}

@@ -72,13 +72,16 @@ function Divider2() {
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center px-4 py-12 sm:px-6 sm:py-16 md:px-6 md:py-20 lg:px-16 lg:py-24 xl:py-28">
         {counters.map((counter, idx) => (
-          <div key={idx} className="flex flex-col items-center justify-center">
-            <p className="text-h1 md:text-h1 font-bold text-colors-secondTextColor">
+          <div
+            key={idx}
+            className="flex flex-col items-center justify-center gap-2"
+          >
+            <h3 className="text-h1 font-bold text-colors-secondTextColor">
               {counts[idx]}
               {counter.suffix}
-            </p>
+            </h3>
 
-            <h3 className="md:text-h3 font-semibold text-colors-textLightColor">
+            <h3 className="text-h3 font-semibold text-colors-textLightColor">
               {counter.label}
             </h3>
           </div>

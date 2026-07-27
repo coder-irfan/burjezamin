@@ -89,9 +89,7 @@ function FAQ({ getDirection }) {
                       {isOpened ? <FaTimes /> : <FaPlus />}
                     </motion.div>
 
-                    <h3 className="font-semibold text-sm sm:text-base md:text-lg lg:text-xl leading-snug">
-                      {faq.question}
-                    </h3>
+                    <h4 className="font-bold text-h4">{faq.question}</h4>
                   </div>
 
                   <AnimatePresence initial={false}>

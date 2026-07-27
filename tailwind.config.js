@@ -14,10 +14,8 @@ export default {
           textDarkGray: "#383838", // Dark Text Color
           textLightColor: "#ffffff", // White Text Color
           secondTextColor: "rgb(225, 182, 95)", // Special Text Color
-          blueColorLight: "hsl(211, 98%, 97%)",
-          blueColor: "hsl(211, 98%, 88%)",
-          blueColorLightesh: "#3496fe",
-          blueColorDarkesh: "#026fe3",
+          blueColorLightesh: "#1659a9",
+          blueColorDarkesh: "#194891",
           blueColorDark: "#0156b0",
           blueColorVeryDark: "#013e7f",
           red: "#F27070", // Error Color
@@ -36,8 +34,13 @@ export default {
         h2Typing: "clamp(0.8rem, 2.5vw, 1.2rem)",
         h2: "clamp(1.4rem, 3vw, 2.5rem)",
         h3: "clamp(1.1rem, 2vw, 1.3rem)",
-        h4: "clamp(1.2rem, 2vw, 1.2rem)",
+        h4: "clamp(0.9rem, 2vw, 1.2rem)",
         description: "clamp(0.8rem, 2vw, 1.1rem)",
+      },
+      fontFamily: {
+        title: ["Altere", "sans-serif"],
+        body: ["Mazzard", "sans-serif"],
+        persian: ["Peyda", "sans-serif"],
       },
       keyframes: {
         pingSlow: {

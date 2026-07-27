@@ -72,7 +72,7 @@ function Contact({ getDirection }) {
             <div className="max-w-[500px]">
               <div className="space-y-6 lg:space-y-10">
                 <div className="space-y-2 lg:space-y-3">
-                  <h2 className="font-semibold text-xl md:text-2xl lg:text-[2rem] xl:text-[2.1rem] md:leading-[1.3]">
+                  <h2 className="font-semibold text-h2 md:leading-[1.3]">
                     {t("contactAltTitle")}
                   </h2>
                   <p className="text-sm md:text-base text-colors-textDarkGray">
@@ -85,7 +85,7 @@ function Contact({ getDirection }) {
                       <Phone className="w-4 h-4 md:w-5 md:h-5 text-colors-textLightColor" />
                     </p>
                     <div className="">
-                      <h4 className="font-bold">{t("phone")}</h4>
+                      <h4 className="text-h4 font-bold">{t("phone")}</h4>
                       <a
                         href="tel:+93711580580"
                         className="text-sm md:text-base hover:text-colors-secondTextColor transition-colors duration-300"
@@ -99,7 +99,7 @@ function Contact({ getDirection }) {
                       <LocationEdit className="w-4 h-4 md:w-5 md:h-5 text-colors-textLightColor" />
                     </p>
                     <div className="">
-                      <h4 className="font-bold">{t("location")}</h4>
+                      <h4 className="text-h4 font-bold">{t("location")}</h4>
                       <p className="text-sm md:text-base">
                         {t("clientLocation")}
                       </p>
@@ -110,7 +110,7 @@ function Contact({ getDirection }) {
                       <MailIcon className="w-4 h-4 md:w-5 md:h-5 text-colors-textLightColor" />
                     </p>
                     <div className="">
-                      <h4 className="font-bold">{t("email")}</h4>
+                      <h4 className="text-h4 font-bold">{t("email")}</h4>
                       <a
                         href="mailto:info@burjezamincc.com"
                         className="text-sm md:text-base hover:text-colors-secondTextColor transition-colors duration-300"

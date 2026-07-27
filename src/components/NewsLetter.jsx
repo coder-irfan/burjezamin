@@ -39,9 +39,7 @@ function NewsLetter() {
           />
           <div className="text-center space-y-6 sm:space-y-8 md:space-y-10 text-colors-textLightColor">
             <div className="">
-              <h2 className="text-h2 font-semibold font-jost">
-                {t("newsletterTitle")}
-              </h2>
+              <h2 className="text-h2 font-semibold">{t("newsletterTitle")}</h2>
               <p className="text-sm md:text-base text-colors-textLightColor/90 text-center max-w-2xl mx-auto">
                 {t("newsletterDesc")}
               </p>

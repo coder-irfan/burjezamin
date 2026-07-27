@@ -34,7 +34,7 @@ function About({ getDirection }) {
                 </p>
               </div>
 
-              <h2 className="font-bold text-2xl md:text-3xl lg:text-[2.4rem] xl:text-[2.7rem] md:leading-[1.3]">
+              <h2 className="font-bold text-h2 md:leading-[1.3]">
                 {t("aboutTitle")}
                 <span className="text-colors-blueColorDark">
                   {" "}

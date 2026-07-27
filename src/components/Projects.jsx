@@ -85,7 +85,7 @@ function DoneProjects({ getDirection }) {
     <section
       dir={getDirection()}
       id="projects"
-      className="px-6 py-16 md:px-8 lg:px-16 lg:py-24 space-y-12 bg-colors-bg"
+      className="px-6 py-16 md:px-8 lg:px-16 lg:py-24 space-y-6 lg:space-y-10 bg-colors-bg"
     >
       {/* Section Header */}
       <div className="text-center space-y-3 md:space-y-4">
@@ -159,7 +159,7 @@ function DoneProjects({ getDirection }) {
                   </div>
 
                   <div className="p-6 space-y-3">
-                    <h3 className="text-lg md:text-xl font-semibold text-colors-textDarkColor group-hover:text-colors-blueColorDark transition-colors">
+                    <h3 className="text-h3 font-semibold text-colors-textDarkColor group-hover:text-colors-blueColorDark transition-colors">
                       {projectTitle}
                     </h3>
 
@@ -299,7 +299,7 @@ function ProjectModal({
               </div>
 
               {/* Title */}
-              <h3 className="text-2xl sm:text-3xl font-bold text-colors-textDarkColor leading-snug">
+              <h3 className="text-h2 font-bold text-colors-textDarkColor leading-snug">
                 {selectedProject.title?.[currentLang] ||
                   selectedProject.title?.en}
               </h3>

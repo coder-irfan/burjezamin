@@ -109,7 +109,7 @@ function Services({ getDirection }) {
                     0{index + 1}
                   </span>
 
-                  <h3 className="text-lg md:text-xl font-semibold text-colors-textDarkColor group-hover:text-colors-blueColorDark transition-colors">
+                  <h3 className="text-h3 font-semibold text-colors-textDarkColor group-hover:text-colors-blueColorDark transition-colors">
                     {item.title}
                   </h3>
 

@@ -2,6 +2,103 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ==========================================
+   1. ALTERE (English Titles)
+   ========================================== */
+@font-face {
+  font-family: "Altere";
+  src: url("./assets/fonts/Altere-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================
+   2. MAZZARD (English Body & UI)
+   ========================================== */
+@font-face {
+  font-family: "Mazzard";
+  src: url("./assets/fonts/Mazzard-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mazzard";
+  src: url("./assets/fonts/Mazzard-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mazzard";
+  src: url("./assets/fonts/Mazzard-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mazzard";
+  src: url("./assets/fonts/Mazzard-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mazzard";
+  src: url("./assets/fonts/Mazzard-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================
+   3. Peyda (Persian Titles & Body)
+   ========================================== */
+@font-face {
+  font-family: "Peyda";
+  src: url("./assets/fonts/Peyda-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Peyda";
+  src: url("./assets/fonts/Peyda-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Peyda";
+  src: url("./assets/fonts/Peyda-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Peyda";
+  src: url("./assets/fonts/Peyda-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Peyda";
+  src: url("./assets/fonts/Peyda-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 100%;
@@ -15,7 +112,7 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Mazzard", sans-serif;
   overflow-x: hidden;
   background-color: #f7f7f7;
   color: #131314;
@@ -25,36 +122,61 @@ body {
   scroll-behavior: smooth;
 }
 
-html[lang="fa"] body,
-html[lang="ps"] body {
-  font-family: "Vazirmatn", sans-serif;
+html[lang="en"] h1,
+html[lang="en"] h2,
+html[lang="en"] h3,
+html[lang="en"] h4,
+html[lang="en"] h5,
+html[lang="en"] h6 {
+  font-family: "Altere", sans-serif !important;
+  font-weight: 400 !important;
+  line-height: 1.15;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Syne", sans-serif;
+html[lang="en"] .text-h1 {
+  font-size: clamp(1.1rem, 0.7rem + 3.4vw, 2.4rem) !important;
+  line-height: 1.8;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Syne", sans-serif;
+html[lang="en"] .text-h2 {
+  font-size: clamp(1rem, 2.1vw, 1.8rem) !important;
+  line-height: 1.8;
 }
 
+html[lang="en"] .text-h2Typing {
+  font-size: clamp(0.6rem, 1.8vw, 0.9rem) !important;
+}
+
+html[lang="en"] .text-h3 {
+  font-size: clamp(0.8rem, 1.4vw, 0.95rem) !important;
+}
+
+html[lang="en"] .text-h4 {
+  font-size: clamp(0.6rem, 1.4vw, 0.85rem) !important;
+  line-height: 1.8;
+}
+
+/* ------------------------------------------
+   Persian / Dari Language Overrides (Peyda)
+   ------------------------------------------ */
+
+/* Body text when document language is Persian  */
+html[lang="fa"] body {
+  font-family: "Peyda", sans-serif;
+}
+
+/* All headings when document language is Persian */
 html[lang="fa"] h1,
 html[lang="fa"] h2,
 html[lang="fa"] h3,
 html[lang="fa"] h4,
 html[lang="fa"] h5,
 html[lang="fa"] h6 {
-  font-family: "IBM Plex Sans Arabic", sans-serif !important;
+  font-family: "Peyda", sans-serif !important;
+}
+
+html[lang="fa"] h1 {
+  line-height: 1.5;
 }
 
 .hover-link {
