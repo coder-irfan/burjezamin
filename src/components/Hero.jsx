@@ -11,7 +11,7 @@ function Hero({ getDirection }) {
         dir={getDirection()}
         id="home"
         className={`md:pt-36 md:pb-24 lg:pt-40 lg:pb-24 xl:pt-44 xl:pb-40 px-4 sm:px-6 md:px-8 lg:px-16 max-w-[85rem] 2xl:max-w-[88rem] mx-auto z-50 relative text-colors-textLightColor
-        ${isRTL ? "pt-32 pb-[140px]" : "pt-32 pb-[120px]"}`}
+        ${isRTL ? "pt-32 pb-[150px]" : "pt-32 pb-[120px]"}`}
       >
         <div className="flex flex-col items-center justify-between gap-14 sm:gap-14">
           <div
