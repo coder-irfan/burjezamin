@@ -1,12 +1,14 @@
 import { motion } from "framer-motion";
 import { fadeUp, staggerContainer } from "../utils/animations";
 import { useTranslation } from "react-i18next";
+import { NavLink, useParams } from "react-router-dom";
 
 import { LucideChevronsRight } from "lucide-react";
 
 function Services({ getDirection }) {
   const isRTL = getDirection() === "rtl";
   const { t } = useTranslation();
+  const { lang = "en" } = useParams();
 
   const whyUs = [
     {
@@ -14,28 +16,28 @@ function Services({ getDirection }) {
       number: 1,
       title: t("service1_title"),
       description: t("service1_desc"),
-      image: "images/Golden Balloon Dog Statue for office.webp",
+      image: "/images/Golden Balloon Dog Statue for office.webp",
     },
     {
       id: "2",
       number: 2,
       title: t("service2_title"),
       description: t("service2_desc"),
-      image: "images/planning.webp",
+      image: "/images/planning.webp",
     },
     {
       id: "3",
       number: 3,
       title: t("service3_title"),
       description: t("service3_desc"),
-      image: "images/building.webp",
+      image: "/images/building.webp",
     },
     {
       id: "4",
       number: 4,
       title: t("service4_title"),
       description: t("service4_desc"),
-      image: "images/download (5) (1).webp",
+      image: "/images/download (5) (1).webp",
     },
     {
       id: "5",
@@ -43,14 +45,14 @@ function Services({ getDirection }) {
       title: t("service5_title"),
       description: t("service5_desc"),
       image:
-        "images/Como garantir controle e qualidade em obras_ Dicas essenciais.webp",
+        "/images/Como garantir controle e qualidade em obras_ Dicas essenciais.webp",
     },
     {
       id: "6",
       number: 6,
       title: t("service6_title"),
       description: t("service6_desc"),
-      image: "images/latest-project__item-4.webp",
+      image: "/images/latest-project__item-4.webp",
     },
   ];
 
@@ -118,11 +120,11 @@ function Services({ getDirection }) {
                   </p>
 
                   <div className="mt-auto pt-2 md:pt-4">
-                    <a href="#projects">
+                    <NavLink to={`/${lang}/projects`}>
                       <button className="text-sm font-semibold text-colors-secondTextColor hover:underline group-hover:translate-x-1 transition-transform flex items-center gap-1">
                         {t("viewMore")} <LucideChevronsRight />
                       </button>
-                    </a>
+                    </NavLink>
                   </div>
                 </div>
               </motion.div>

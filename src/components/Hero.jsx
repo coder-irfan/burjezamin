@@ -1,9 +1,11 @@
 import { TypeAnimation } from "react-type-animation";
 import { useTranslation } from "react-i18next";
+import { NavLink, useParams } from "react-router-dom";
 
 function Hero({ getDirection }) {
   const { t, i18n } = useTranslation();
   const isRTL = getDirection() === "rtl";
+  const { lang = "en" } = useParams();
 
   return (
     <>
@@ -48,12 +50,12 @@ function Hero({ getDirection }) {
             <p className="text-sm lg:text-base">{t("heroDescription")}</p>
 
             <div className="flex items-center justify-center md:justify-start gap-2 pt-4 lg:pt-8">
-              <a href="#about-us" className="button">
+              <NavLink to={`/${lang}/about`} className="button">
                 {t("learnMore")}
-              </a>
-              <a href="#contact" className="button">
+              </NavLink>
+              <NavLink to={`/${lang}/contact`} className="button">
                 {t("contactUs")}
-              </a>
+              </NavLink>
             </div>
           </div>
         </div>

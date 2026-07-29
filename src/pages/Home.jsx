@@ -1,0 +1,68 @@
+import { Suspense, lazy } from "react";
+
+// Directly loaded above-the-fold components
+import Hero from "../components/Hero";
+import About from "../components/About";
+import Divider from "../components/Divider";
+import Services from "../components/Services";
+import LoaderUI from "../components/Loader";
+
+// Lazy loaded heavy components below the fold
+const Divider2 = lazy(() => import("../components/Divider2"));
+const FAQ = lazy(() => import("../components/FAQ"));
+const Testimonial = lazy(() => import("../components/Testimonial"));
+const Projects = lazy(() => import("../components/Projects"));
+const Contact = lazy(() => import("../components/Contact"));
+const Location = lazy(() => import("../components/Location"));
+const NewsLetter = lazy(() => import("../components/NewsLetter"));
+
+const Home = ({ getDirection }) => (
+  <>
+    {/* Hero Section */}
+    <div className="bg-hero-bg bg-cover bg-no-repeat bg-center relative">
+      <Hero getDirection={getDirection} />
+      <div className="absolute inset-0 bg-colors-textDarkColor/70 lg:bg-colors-textDarkColor/75 pointer-events-none" />
+    </div>
+
+    {/* About Section */}
+    <About getDirection={getDirection} />
+
+    {/* Divider 1 */}
+    <div className="bg-divider-bg bg-cover bg-no-repeat bg-right relative">
+      <Divider />
+      <div className="absolute inset-0 bg-colors-textDarkColor/70 pointer-events-none" />
+    </div>
+
+    {/* Core Sections */}
+    <Services getDirection={getDirection} />
+
+    {/* Lazy Loaded Sections */}
+    <Suspense fallback={<LoaderUI />}>
+      <div className="bg-divider2-bg bg-cover bg-no-repeat bg-top relative">
+        <Divider2 />
+        <div className="absolute inset-0 bg-colors-textDarkColor/70 pointer-events-none" />
+      </div>
+
+      <FAQ getDirection={getDirection} />
+
+      <div className="bg-testimonial-bg bg-contain bg-no-repeat bg-center bg-colors-secondBg">
+        <Testimonial getDirection={getDirection} />
+      </div>
+
+      {/* Shows top / latest 3 projects on homepage */}
+      <Projects getDirection={getDirection} limit={3} />
+
+      <div className="bg-contact-bg bg-contain bg-no-repeat bg-right-top bg-colors-secondBg">
+        <Contact getDirection={getDirection} />
+      </div>
+
+      <Location />
+
+      <div className="bg-colors-secondBg">
+        <NewsLetter />
+      </div>
+    </Suspense>
+  </>
+);
+
+export default Home;

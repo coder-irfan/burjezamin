@@ -1,9 +1,9 @@
 {
   "home": "Home",
   "about": "About Us",
-  "services": "Services",
-  "projects": "Projects",
-  "contact": "Contact",
+  "services": "Our Services",
+  "projects": "Our Projects",
+  "contact": "Contact Us",
   "contactUs": "Contact Us",
 
   "heroTagline": "Construction & Engineering",
@@ -19,6 +19,17 @@
   "aboutName": "Needed",
   "aboutDescription": "Burj-e-Zamin Construction Company was established to provide professional services in design, construction, and project management. By combining experience and effective management. Burj-e-Zamin is committed to timely project delivery, engineering standards, and creating sustainable value in Afghanistan’s construction industry.",
   "requestQuote": "Request a Quote",
+  "downloadProfile": "Download Company Profile",
+  "companyProfile": "Company Profile",
+
+  "yearsExperience": "Years of Experience",
+  "aboutDetailTag": "About Our Company",
+  "aboutDetailDescription": "Burj Zamin stands as a pioneer in modern engineering and project execution, setting new benchmarks for quality construction and architectural design. Driven by technical innovation, strict safety standards, and dedicated project management, our team delivers long-lasting, cost-effective infrastructure tailored to meet the evolving demands of our clients.",
+  "aboutFeature1": "Certified Engineers & Designers",
+  "aboutFeature2": "Modern & High-Quality Build",
+  "aboutFeature3": "On-Time Project Delivery",
+  "aboutFeature4": "Client-Centric Approach",
+  "ourProjects": "View Our Projects",
 
   "ctaTitle": "Ready to start your project?",
   "ctaDescription": "Burj-e-Zamin delivers reliable construction services with quality, precision, and on-time results you can trust.",
@@ -29,18 +40,24 @@
   "servicesName": "Burj-e-Zamin",
   "servicesDescription": "Reliable construction services focused on quality, safety, and on-time project delivery.",
   "viewMore": "View More",
+
   "service1_title": "Interior & Exterior Decoration",
-  "service1_desc": "Modern interior and exterior finishing solutions designed to enhance beauty, functionality, and comfort using high-quality materials and creative designs.",
+  "service1_desc": "Modern interior and exterior finishing solutions designed to enhance beauty, functionality, and comfort using premium high-quality materials, creative designs, and immaculate craftsmanship.",
+
   "service2_title": "Architectural Design & Planning",
-  "service2_desc": "Professional design and planning services including layouts, 2D/3D drawings, and project planning tailored to your vision and construction standards.",
+  "service2_desc": "Professional design and planning services including dynamic layouts, 2D/3D visualization drawings, and comprehensive project planning tailored precisely to your vision and budget.",
+
   "service3_title": "Building Construction",
-  "service3_desc": "Complete construction services for residential and commercial projects, ensuring strong structure, quality materials, and long-term durability from foundation to finishing.",
+  "service3_desc": "Complete construction services for residential and commercial projects, ensuring robust structural integrity, certified materials, and long-term durability from initial foundation work to final handover.",
+
   "service4_title": "Renovation & Remodeling",
-  "service4_desc": "Upgrade and transform existing buildings with renovation services that improve structure, appearance, and usability while maintaining safety standards.",
+  "service4_desc": "Upgrade and transform existing structures with modern renovation services that optimize space, improve appearance, and maximize usability while strictly maintaining safety standards.",
+
   "service5_title": "Project Management",
-  "service5_desc": "Efficient project management ensuring smooth workflow, cost control, timely delivery, and coordination across all construction phases.",
+  "service5_desc": "Efficient end-to-end project management ensuring seamless workflow, precise cost control, timely delivery, risk mitigation, and clear coordination across all construction phases.",
+
   "service6_title": "Infrastructure & Civil Works",
-  "service6_desc": "Road construction, groundwork, and infrastructure development built with precision and durability for large-scale projects.",
+  "service6_desc": "Comprehensive road construction, groundwork, and infrastructure development built with modern machinery, technical precision, and long-lasting durability for large-scale urban and industrial projects.",
 
   "testimonialLabel": "Testimonials",
   "testimonialTitle1": "What Our ",
@@ -95,7 +112,7 @@
   "contactAltDesc": "Reach out to Burj-e-Zamin for inquiries, project discussions, or a free consultation. Our team is ready to assist you with clear guidance and quick responses.",
   "phone": "Phone",
   "location": "Location",
-  "clientLocation": "Shahre Naw, Clock Tower, 4th Floor, Kabul Afghanistan",
+  "clientLocation": "Shahr-e Naw, Clock Tower, 4th Floor, Kabul Afghanistan",
   "email": "Email",
   "fullName": "Full Name",
   "phoneNumber": "Phone",

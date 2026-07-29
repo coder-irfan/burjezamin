@@ -62,11 +62,12 @@ function CoreValues({ getDirection }) {
               <div
                 key={value.id}
                 className={`p-6 text-center flex flex-col items-center justify-center gap-4 lg:gap-6 rounded-lg transition-all duration-300 shadow-sm hover:shadow-lg border border-colors-thirdBg/30 ${
-                  isEven ? "bg-colors-bg" : "bg-colors-blueColorDark/20"
+                  isEven ? "bg-colors-bg" : "bg-colors-blueColorDark/15"
                 }`}
               >
                 <div className="p-3 rounded-full bg-colors-bg shadow-md">
-                  <Icon className="text-3xl lg:text-4xl text-colors-blueColorDark" />
+                  <Icon className="text-3xl lg:text-4xl text-colors-blueColorDark"
+                     />
                 </div>
 
                 <div className="space-y-2">

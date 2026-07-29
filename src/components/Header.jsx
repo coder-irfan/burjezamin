@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, NavLink, useParams, useLocation } from "react-router-dom";
 import {
   FaInstagram,
   FaFacebook,
@@ -17,26 +17,13 @@ import { useTranslation } from "react-i18next";
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState("home");
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const { lang = "en" } = useParams();
 
   useEffect(() => {
-    const sections = ["home", "about-us", "services", "projects", "contact"];
-
     const handleScroll = () => {
-      let current = "home";
-
-      sections.forEach((id) => {
-        const section = document.getElementById(id);
-        if (section) {
-          const top = section.offsetTop - 300;
-          if (window.scrollY >= top) {
-            current = id;
-          }
-        }
-      });
-
-      setActiveSection(current);
-
       if (window.scrollY > 300) {
         setIsScrolled(true);
       } else {
@@ -49,7 +36,6 @@ function Header() {
   }, []);
 
   /* Language Translations */
-  const navigate = useNavigate();
   const [isGlobeOpen, setIsGlobeOpen] = useState(false);
   const { t, i18n } = useTranslation();
 
@@ -101,8 +87,8 @@ function Header() {
             <img
               src={`${
                 isScrolled
-                  ? "images/logo-blue-english.webp"
-                  : "images/logo-white-english.webp"
+                  ? "/images/logo-blue-english.webp"
+                  : "/images/logo-white-english.webp"
               }`}
               alt="logo"
               className="w-32 lg:w-44 object-contain"
@@ -117,115 +103,124 @@ function Header() {
               >
                 <div className="md:hidden absolute top-0 left-4 py-5">
                   <img
-                    src="images/logo-blue-english.webp"
+                    src="/images/logo-blue-english.webp"
                     alt="logo"
                     className="w-44 object-contain"
                   />
                 </div>
+
                 <div className="flex flex-col md:flex-row items-end gap-8">
                   <ul
-                    className={`flex flex-col md:flex-row items-end md:items-center gap-4 lg:gap-6 lg:text-lg text-colors-textDarkColor
-                    ${
+                    className={`flex flex-col md:flex-row items-end md:items-center gap-4 lg:gap-6 lg:text-lg text-colors-textDarkColor ${
                       isScrolled
                         ? "md:text-colors-textDarkColor"
                         : "md:text-colors-textLightColor"
                     }`}
                   >
-                    <li
-                      className={`hover-link font-semibold
-                    ${activeSection === "home" ? "active-link" : ""}`}
-                    >
-                      <a
-                        href="#home"
+                    {/* HOME LINK */}
+                    <li className="font-semibold">
+                      <NavLink
+                        to={`/${lang}`}
+                        end
                         onClick={() => setIsOpen(false)}
-                        className=""
+                        className={({ isActive }) =>
+                          `hover-link ${isActive ? "active-link" : ""}`
+                        }
                       >
                         {t("home")}
-                      </a>
+                      </NavLink>
                     </li>
 
                     <div className="md:hidden w-screen h-[1px] -mr-6 bg-colors-textDarkColor/40"></div>
 
                     <li className="hidden md:flex opacity-25">|</li>
-                    <li
-                      className={`hover-link font-semibold
-                    ${activeSection === "about-us" ? "active-link" : ""}`}
-                    >
-                      <a
-                        href="#about-us"
+
+                    {/* ABOUT US LINK */}
+                    <li className="font-semibold">
+                      <NavLink
+                        to={`/${lang}/about`}
                         onClick={() => setIsOpen(false)}
-                        className=""
+                        className={({ isActive }) =>
+                          `hover-link ${isActive ? "active-link" : ""}`
+                        }
                       >
                         {t("about")}
-                      </a>
+                      </NavLink>
                     </li>
 
                     <div className="md:hidden w-screen h-[1px] -mr-6 bg-colors-textDarkColor/40"></div>
 
                     <li className="hidden md:flex opacity-25">|</li>
-                    <li
-                      className={`hover-link font-semibold
-                    ${activeSection === "services" ? "active-link" : ""}`}
-                    >
-                      <a
-                        href="#services"
+
+                    {/* SERVICES LINK */}
+                    <li className="font-semibold">
+                      <NavLink
+                        to={`/${lang}/services`}
                         onClick={() => setIsOpen(false)}
-                        className=""
+                        className={({ isActive }) =>
+                          `hover-link ${isActive ? "active-link" : ""}`
+                        }
                       >
                         {t("services")}
-                      </a>
+                      </NavLink>
                     </li>
 
                     <div className="md:hidden w-screen h-[1px] -mr-6 bg-colors-textDarkColor/40"></div>
 
                     <li className="hidden md:flex opacity-25">|</li>
-                    <li
-                      className={`hover-link font-semibold
-                    ${activeSection === "projects" ? "active-link" : ""}`}
-                    >
-                      <a
-                        href="#projects"
+
+                    {/* PROJECTS LINK */}
+                    <li className="font-semibold">
+                      <NavLink
+                        to={`/${lang}/projects`}
                         onClick={() => setIsOpen(false)}
-                        className=""
+                        className={({ isActive }) =>
+                          `hover-link ${isActive ? "active-link" : ""}`
+                        }
                       >
                         {t("projects")}
-                      </a>
+                      </NavLink>
                     </li>
 
                     <div className="md:hidden w-screen h-[1px] -mr-6 bg-colors-textDarkColor/40"></div>
 
                     <li className="hidden md:flex opacity-25">|</li>
-                    <li
-                      className={`hover-link font-semibold
-                    ${activeSection === "contact" ? "active-link" : ""}`}
-                    >
-                      <a
-                        href="#contact"
+
+                    {/* CONTACT LINK */}
+                    <li className="font-semibold">
+                      <NavLink
+                        to={`/${lang}/contact`}
                         onClick={() => setIsOpen(false)}
-                        className=""
+                        className={({ isActive }) =>
+                          `hover-link ${isActive ? "active-link" : ""}`
+                        }
                       >
                         {t("contact")}
-                      </a>
+                      </NavLink>
                     </li>
 
                     <div className="md:hidden w-screen h-[1px] -mr-6 bg-colors-textDarkColor/40"></div>
                   </ul>
-                  <div className="md:hidden text-sm z-10 ">
-                    <a
+
+                  {/* MOBILE CONTACT BUTTON */}
+                  <div className="md:hidden text-sm z-10">
+                    <NavLink
+                      to={`/${lang}/contact`}
                       onClick={() => setIsOpen(false)}
-                      href="#contact"
                       className="button"
                     >
                       {t("contactUs")}
                       <PhoneCall className="w-5 h-5" />
-                    </a>
+                    </NavLink>
                   </div>
 
-                  <div className="md:hidden flex flex-wrap justify-center items-center gap-2 lg:gap-4 text-xl md:text-2xl xl:text-3xl ">
+                  {/* SOCIAL LINKS */}
+                  <div className="md:hidden flex flex-wrap justify-center items-center gap-2 lg:gap-4 text-xl md:text-2xl xl:text-3xl">
                     <a
-                      href="https://www.instagram.com/"
+                      href="https://www.instagram.com/burjezamin?igsh=MW8yenlqdnFlaWJlcw=="
                       className="media-link"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       <FaInstagram />
                     </a>
@@ -233,13 +228,15 @@ function Header() {
                       href="https://www.youtube.com/"
                       className="media-link"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       <FaYoutube />
                     </a>
                     <a
-                      href="https://www.facebook.com/"
+                      href="https://www.facebook.com/share/14ouu5honQm/?mibextid=LQQJ4d"
                       className="media-link"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       <FaFacebook />
                     </a>
@@ -247,6 +244,7 @@ function Header() {
                       href="https://telegram.com/"
                       className="media-link"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       <FaTelegram />
                     </a>
@@ -299,7 +297,17 @@ function Header() {
                           key={lang.code}
                           onClick={() => {
                             i18n.changeLanguage(lang.code);
-                            navigate(`/${lang.code}`);
+
+                            // Replace current language segment in URL with new language code
+                            const currentPath = location.pathname;
+                            const updatedPath = currentPath.replace(
+                              /^\/[a-zA-Z]{2}/,
+                              `/${lang.code}`,
+                            );
+
+                            navigate(
+                              `${updatedPath}${location.search}${location.hash}`,
+                            );
                             setIsGlobeOpen(false);
                           }}
                         >
@@ -317,10 +325,10 @@ function Header() {
               </div>
 
               <div className="hidden lg:flex items-center gap-2">
-                <a href="#contact" className="button">
+                <NavLink to={`/${lang}/contact`} className="button">
                   {t("contactUs")}
                   <PhoneCall className="w-5 h-5" />
-                </a>
+                </NavLink>
               </div>
             </div>
 

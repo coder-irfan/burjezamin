@@ -35,7 +35,7 @@ export default {
         h2: "clamp(1.4rem, 3vw, 2.5rem)",
         h3: "clamp(1.1rem, 2vw, 1.3rem)",
         h4: "clamp(0.9rem, 2vw, 1.2rem)",
-        description: "clamp(0.8rem, 2vw, 1.1rem)",
+        description: "clamp(0.9rem, 2vw, 1.1rem)",
       },
       fontFamily: {
         title: ["Altere", "sans-serif"],

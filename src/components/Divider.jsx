@@ -1,7 +1,9 @@
 import { useTranslation } from "react-i18next";
+import { NavLink, useParams } from "react-router-dom";
 
 function Divider() {
   const { t } = useTranslation();
+  const { lang = "en" } = useParams();
 
   return (
     <>
@@ -15,9 +17,9 @@ function Divider() {
             {t("ctaDescription")}
           </p>
           <div className="pt-4 md:pt-6 flex items-center justify-center text-colors-textDarkColor">
-            <a href="#contact" className="button">
-              {t("ctaButton")}
-            </a>
+            <NavLink to={`/${lang}/contact`} className="button">
+              {t("contactUs")}
+            </NavLink>
           </div>
         </div>
       </section>

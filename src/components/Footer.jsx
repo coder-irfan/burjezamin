@@ -1,9 +1,11 @@
 import { Phone, LocationEdit, MailIcon } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import AnimatedTracks from "./AnimatedTrucks";
+import { NavLink, useParams } from "react-router-dom";
 
 function Footer({ getDirection }) {
   const { t } = useTranslation();
+  const { lang = "en" } = useParams();
 
   return (
     <>
@@ -15,7 +17,7 @@ function Footer({ getDirection }) {
         <div className="px-4 sm:px-6 md:px-8 lg:px-16 flex flex-col lg:flex-row justify-center lg:justify-between gap-8 lg:gap-10 pb-8">
           <div className="space-y-5 lg:space-y-5 max-w-md lg:max-w-xs flex flex-col items-start justify-start ">
             <img
-              src="images/logo-blue-english.webp"
+              src="/images/logo-blue-english.webp"
               alt="logo"
               className="w-44 lg:w-52 object-contain"
             />
@@ -29,9 +31,9 @@ function Footer({ getDirection }) {
               </h3>
               <ul className="space-y-2 lg:space-y-3 text-sm xl:text-base">
                 <li className="">
-                  <a href="#about-us" className="hover-link">
+                  <NavLink to={`/${lang}/about`} className="hover-link">
                     {t("aboutUs")}
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="">
                   <a href="#testimonial" className="hover-link">
@@ -39,14 +41,14 @@ function Footer({ getDirection }) {
                   </a>
                 </li>
                 <li className="">
-                  <a href="#projects" className="hover-link">
+                  <NavLink to={`/${lang}/projects`} className="hover-link">
                     {t("projectsLink")}
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="">
-                  <a href="#services" className="hover-link">
+                  <NavLink to={`/${lang}/services`} className="hover-link">
                     {t("servicesLink")}
-                  </a>
+                  </NavLink>
                 </li>
               </ul>
             </div>
@@ -56,9 +58,9 @@ function Footer({ getDirection }) {
               </h3>
               <ul className="space-y-2 lg:space-y-3 text-sm xl:text-base">
                 <li className="">
-                  <a href="#contact" className="hover-link">
+                  <NavLink to={`/${lang}/contact`} className="hover-link">
                     {t("contactUsLink")}
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="">
                   <a href="#newsletter" className="hover-link">
@@ -71,9 +73,9 @@ function Footer({ getDirection }) {
                   </a>
                 </li>
                 <li className="">
-                  <a href="#contact" className="hover-link">
+                  <NavLink to={`/${lang}/contact`} className="hover-link">
                     {t("information")}
-                  </a>
+                  </NavLink>
                 </li>
               </ul>
             </div>
@@ -90,19 +92,19 @@ function Footer({ getDirection }) {
                   </a>
                 </li>
                 <li className="">
-                  <a href="#contact" className="hover-link">
+                  <NavLink to={`/${lang}/contact`} className="hover-link">
                     {t("helpCenter")}
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="">
-                  <a href="#about-us" className="hover-link">
+                  <NavLink to={`/${lang}/about`} className="hover-link">
                     {t("moreInfo")}
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="">
-                  <a href="#about-us" className="hover-link">
+                  <NavLink to={`/${lang}/about`} className="hover-link">
                     {t("privacy")}
-                  </a>
+                  </NavLink>
                 </li>
               </ul>
             </div>
@@ -144,14 +146,16 @@ function Footer({ getDirection }) {
           dir="ltr"
           className="px-4 sm:px-6 md:px-8 lg:px-16 flex items-center justify-between text-xs sm:text-sm md:text-base gap-2"
         >
-          <p className="">
+          <p className="flex items-center gap-2">
             {t("developedBy")}
             <span className="text-colors-blueColorDark hover:text-colors-blueColorLightesh transition duration-200 underline font-medium">
-              <a
-                href="https://coder-irfan-portfolio.onrender.com"
-                target="_blank"
-              >
-                {""} Coder Irfan
+              <a href="https://designmasters.tech" target="_blank" className="">
+                <img
+                  src="/images/design-masters-logo.webp"
+                  alt="logo"
+                  className="w-6 md:w-7 object-contain"
+                  title="Design Masters"
+                />
               </a>
             </span>
           </p>

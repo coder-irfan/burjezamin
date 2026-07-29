@@ -1,35 +1,21 @@
 import { useEffect, Suspense, lazy } from "react";
 import { useTranslation } from "react-i18next";
-import { Routes, Route, Navigate, useParams } from "react-router-dom";
+import { Routes, Route, Navigate, useParams, Outlet } from "react-router-dom";
 
-// Above-the-fold components (Loaded immediately for instant LCP)
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Divider from "./components/Divider";
-import WhatsApp from "./components/WhatsApp";
+// Shared Layout
+import Layout from "./components/Layout";
 
-// Critical section below fold (Loaded directly to prevent layout layout jumps)
-import Services from "./components/Services";
-import CoreValues from "./components/CoreValues";
+// Page Components
+import Home from "./pages/Home";
 
-// Heavy or heavy-asset components lazy-loaded
-const Divider2 = lazy(() => import("./components/Divider2"));
-const Testimonial = lazy(() => import("./components/Testimonial"));
-const FAQ = lazy(() => import("./components/FAQ"));
-const Projects = lazy(() => import("./components/Projects"));
-const Contact = lazy(() => import("./components/Contact"));
-const Location = lazy(() => import("./components/Location"));
-const NewsLetter = lazy(() => import("./components/NewsLetter"));
-const Footer = lazy(() => import("./components/Footer"));
+// Lazy-loaded Pages
+const About = lazy(() => import("./pages/About"));
+const Services = lazy(() => import("./pages/Services"));
+const Projects = lazy(() => import("./pages/Projects"));
+const ProjectDetails = lazy(() => import("./pages/ProjectDetails"));
+const Contact = lazy(() => import("./pages/Contact"));
 
-// Minimal Loader to avoid layout shifts
-const SectionLoader = () => (
-  <div className="w-full h-32 flex items-center justify-center opacity-30">
-    <div className="w-6 h-6 border-2 border-colors-secondTextColor border-t-transparent rounded-full animate-spin"></div>
-  </div>
-);
-
+// Sync Language and Direction
 const LanguageSync = () => {
   const { lang } = useParams();
   const { i18n } = useTranslation();
@@ -37,80 +23,22 @@ const LanguageSync = () => {
   useEffect(() => {
     if (!lang) return;
 
-    const validLangs = ["en", "fa", "ps"];
+    const validLangs = ["en", "fa"];
     const targetLang = validLangs.includes(lang) ? lang : "en";
 
     if (i18n.language !== targetLang) {
       i18n.changeLanguage(targetLang);
     }
 
-    // Set HTML lang & dir attributes dynamically for SEO & Accessibility
-    const isRtl = ["fa", "ps"].includes(targetLang);
+    const isRtl = ["fa"].includes(targetLang);
     document.documentElement.setAttribute("lang", targetLang);
     document.documentElement.setAttribute("dir", isRtl ? "rtl" : "ltr");
   }, [lang, i18n]);
 
-  return null;
+  return <Outlet />;
 };
 
-const Landing = ({ getDirection }) => (
-  <>
-    <LanguageSync />
-
-    <Header getDirection={getDirection} />
-
-    {/* Hero Section */}
-    <div className="bg-hero-bg bg-cover bg-no-repeat bg-center relative">
-      <Hero getDirection={getDirection} />
-      <div className="absolute inset-0 bg-colors-textDarkColor/70 lg:bg-colors-textDarkColor/75 pointer-events-none" />
-    </div>
-
-    {/* About Section */}
-    <About getDirection={getDirection} />
-
-    {/* Divider 1 */}
-    <div className="bg-divider-bg bg-cover bg-no-repeat bg-right relative">
-      <Divider />
-      <div className="absolute inset-0 bg-colors-textDarkColor/70 pointer-events-none" />
-    </div>
-
-    {/* Directly Loaded Core Sections */}
-    <Services getDirection={getDirection} />
-    <CoreValues getDirection={getDirection} />
-
-    {/* Lazy Loaded Lower Sections */}
-    <Suspense fallback={<SectionLoader />}>
-      <div className="bg-divider2-bg bg-cover bg-no-repeat bg-top relative">
-        <Divider2 />
-        <div className="absolute inset-0 bg-colors-textDarkColor/70 pointer-events-none" />
-      </div>
-
-      <FAQ getDirection={getDirection} />
-
-      <div className="bg-testimonial-bg bg-contain bg-no-repeat bg-center bg-colors-secondBg">
-        <Testimonial getDirection={getDirection} />
-      </div>
-
-      <Projects getDirection={getDirection} />
-
-      <div className="bg-contact-bg bg-contain bg-no-repeat bg-right-top bg-colors-secondBg">
-        <Contact getDirection={getDirection} />
-      </div>
-
-      <Location />
-
-      <div className="bg-colors-secondBg">
-        <NewsLetter />
-      </div>
-
-      <div className="bg-footer-bg bg-contain md:bg-cover bg-no-repeat bg-bottom relative">
-        <Footer getDirection={getDirection} />
-      </div>
-    </Suspense>
-
-    <WhatsApp />
-  </>
-);
+// ---------------- MAIN APP ROUTER ---------------- //
 
 function App() {
   const { i18n } = useTranslation();
@@ -123,7 +51,56 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/en" replace />} />
-      <Route path="/:lang" element={<Landing getDirection={getDirection} />} />
+
+      {/* Language Wrapper Route */}
+      <Route path="/:lang" element={<LanguageSync />}>
+        {/* Layout Shell Wrapper */}
+        <Route element={<Layout getDirection={getDirection} />}>
+          <Route index element={<Home getDirection={getDirection} />} />
+          <Route
+            path="about"
+            element={
+              <Suspense>
+                <About getDirection={getDirection} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="services"
+            element={
+              <Suspense>
+                <Services getDirection={getDirection} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="projects"
+            element={
+              <Suspense>
+                <Projects getDirection={getDirection} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="projects/:slug"
+            element={
+              <Suspense>
+                <ProjectDetails getDirection={getDirection} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="contact"
+            element={
+              <Suspense>
+                <Contact getDirection={getDirection} />
+              </Suspense>
+            }
+          />
+        </Route>
+      </Route>
+
+      {/* Fallback */}
       <Route path="*" element={<Navigate to="/en" replace />} />
     </Routes>
   );

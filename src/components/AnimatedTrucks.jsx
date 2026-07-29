@@ -3,21 +3,21 @@ function AnimatedTracks() {
     <>
       <div dir="ltr" className="relative">
         <img
-          src="images/truck.png"
+          src="/images/truck.png"
           alt="truck"
           loading="lazy"
           decoding="async"
           className="absolute bottom-0 w-12 md:w-16 object-contain truck truck-1"
         />
         <img
-          src="images/truck2.png"
+          src="/images/truck2.png"
           alt="truck"
           loading="lazy"
           decoding="async"
           className="absolute bottom-0 w-12 md:w-16 object-contain truck truck-2"
         />
         <img
-          src="images/truck3.png"
+          src="/images/truck3.png"
           alt="truck"
           loading="lazy"
           decoding="async"

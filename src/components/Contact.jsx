@@ -121,7 +121,7 @@ function Contact({ getDirection }) {
                   </div>
                   <div className="flex flex-wrap gap-2 lg:gap-4 text-lg lg:text-2xl">
                     <a
-                      href="https://www.instagram.com/"
+                      href="https://www.instagram.com/burjezamin?igsh=MW8yenlqdnFlaWJlcw=="
                       className="media-link"
                       target="_blank"
                     >
@@ -135,7 +135,7 @@ function Contact({ getDirection }) {
                       <FaYoutube />
                     </a>
                     <a
-                      href="https://www.facebook.com/"
+                      href="https://www.facebook.com/share/14ouu5honQm/?mibextid=LQQJ4d"
                       className="media-link"
                       target="_blank"
                     >
