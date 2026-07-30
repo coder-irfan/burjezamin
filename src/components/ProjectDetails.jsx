@@ -161,7 +161,7 @@ function ProjectDetails({ getDirection }) {
                             key={idx}
                             whileHover={{ scale: 1.02 }}
                             onClick={() => setLightboxIndex(imageGlobalIndex)}
-                            className="relative group cursor-pointer h-16 md:h-28 rounded-md lg:rounded-lg overflow-hidden  bg-colors-blueColorDark/5 shadow-md"
+                            className="relative group cursor-pointer w-full h-16 md:h-28 rounded-md lg:rounded-lg overflow-hidden bg-colors-blueColorDark/5 shadow-md"
                           >
                             <img
                               src={imgUrl}
@@ -318,7 +318,7 @@ function ProjectDetails({ getDirection }) {
                 .auto("format")
                 .url()}
               alt="Project media expanded"
-              className="w-full max-w-[500px] lg:max-w-[600px] h-full max-h-[500px] lg:max-h-[600px] object-cover bg-colors-blueColorDark/50 rounded-lg shadow-2xl"
+              className="w-full max-w-[500px] lg:max-w-[600px] h-full max-h-[500px] lg:max-h-[600px] object-cover bg-colors-textDarkGray rounded-lg shadow-2xl"
             />
           </motion.div>
         )}
