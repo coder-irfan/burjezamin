@@ -1,4 +1,4 @@
-import { Suspense, lazy } from "react";
+import { lazy } from "react";
 
 // Direct imports
 import Services from "../components/Services";
@@ -12,11 +12,9 @@ const ServicesPage = ({ getDirection }) => (
 
     <Services getDirection={getDirection} />
 
-    <Suspense>
-      <div className="bg-testimonial-bg bg-contain bg-no-repeat bg-center bg-colors-secondBg">
-        <Testimonial getDirection={getDirection} />
-      </div>
-    </Suspense>
+    <div className="bg-testimonial-bg bg-contain bg-no-repeat bg-center bg-colors-secondBg">
+      <Testimonial getDirection={getDirection} />
+    </div>
 
     <WhatsApp />
   </>

@@ -1,6 +1,7 @@
-import { useEffect, lazy } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import { useTranslation } from "react-i18next";
 import { Routes, Route, Navigate, useParams, Outlet } from "react-router-dom";
+import PageSkeleton from "./components/PageSkeleton";
 
 // Shared Layout
 import Layout from "./components/Layout";
@@ -56,6 +57,13 @@ function App() {
       <Route path="/:lang" element={<LanguageSync />}>
         {/* Layout Shell Wrapper */}
         <Route element={<Layout getDirection={getDirection} />}>
+          <Route
+            element={
+              <Suspense fallback={<PageSkeleton />}>
+                <Outlet />
+              </Suspense>
+            }
+          ></Route>
           <Route index element={<Home getDirection={getDirection} />} />
           <Route path="about" element={<About getDirection={getDirection} />} />
           <Route
