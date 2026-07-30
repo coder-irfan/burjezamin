@@ -14,7 +14,7 @@ function AboutDetails({ getDirection }) {
   return (
     <section
       dir={getDirection()}
-      className="py-14 md:py-20 xl:py-28 px-2 md:px-6 lg:px-16"
+      className="py-8 md:py-12 xl:py-16 px-2 md:px-6 lg:px-16"
     >
       <div
         className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-10 bg-colors-secondBg p-6 md:p-10 lg:p-10 xl:p-8
@@ -23,29 +23,29 @@ function AboutDetails({ getDirection }) {
         {/* Left Column: Visual Stack with Floating Badge */}
         <div className="relative">
           {/* Main Visual Image */}
-          <div className="">
+          <div className="relative w-full max-w-[650px] h-64 sm:h-96 xl:h-[450px] bg-colors-thirdBg/10 rounded-lg overflow-hidden">
             <img
-              src="/images/about-us-details.webp"
+              src="/images/download (5)-optimized.webp"
               alt="About Us Feature"
               loading="lazy"
               decoding="async"
-              className="rounded-lg w-[500px] sm:h-96 xl:h-auto lg:w-auto object-cover"
+              className="w-full h-full object-cover rounded-lg"
             />
           </div>
 
           {/* Floating Experience / Stats Badge */}
           <div
             className="absolute z-20 bottom-3 lg:bottom-6 start-3 sm:-start-6 
-            bg-white p-3 sm:p-6 rounded-md lg:rounded-lg shadow-xl flex items-center gap-4 max-w-[240px]"
+            bg-white p-3 sm:p-6 rounded-md lg:rounded-lg shadow-xl flex items-center gap-2 md:gap-4 max-w-[240px]"
           >
-            <div className="p-3 bg-colors-blueColorDark/10 text-colors-blueColorDark rounded-xl">
+            <div className="p-2 md:p-3 bg-colors-blueColorDark/10 text-colors-blueColorDark rounded-md lg:rounded-xl">
               <LucideAward className="w-5 h-5 lg:w-8 lg:h-8" />
             </div>
             <div>
               <h3 className="block text-h3 font-extrabold text-colors-textDarkGray">
                 10+
               </h3>
-              <span className="text-xs sm:text-sm font-medium text-gray-500">
+              <span className="text-xs sm:text-sm font-medium text-colors-textDarkGray/70">
                 {t("yearsExperience")}
               </span>
             </div>

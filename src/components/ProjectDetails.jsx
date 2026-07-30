@@ -122,26 +122,28 @@ function ProjectDetails({ getDirection }) {
           <div className="lg:col-span-7 space-y-10 bg-colors-blueColorDark/5 rounded-lg lg:rounded-2xl p-3 md:p-6">
             {project.image && (
               <div className="space-y-2">
-                <div className="relative group rounded-lg lg:rounded-xl overflow-hidden bg-colors-secondBg shadow-2xl border border-colors-textDarkGray/10">
+                <div className="relative group rounded-lg lg:rounded-xl overflow-hidden bg-colors-blueColorDark/5 shadow-2xl border border-colors-textDarkGray/10 w-full h-[300px] md:h-[380px] lg:h-[450px]">
                   <img
                     src={urlFor(project.image)
                       .width(1600)
-                      .quality(0)
+                      .quality(85)
                       .auto("format")
                       .url()}
                     alt={projectTitle}
-                    height={550}
-                    className="w-full max-h-[280px] md:max-h-[400px] lg:max-h-[450px] object-cover"
+                    loading="eager"
+                    decoding="async"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <button
                     onClick={() => setLightboxIndex(0)}
-                    className="absolute bottom-4 end-4 bg-black/60 hover:bg-black/80 backdrop-blur-md text-white p-3 rounded-xl shadow-lg transition-all opacity-90 hover:scale-105 flex items-center gap-2 text-xs font-semibold"
+                    className="absolute bottom-4 end-4 bg-black/60 hover:bg-black/80 backdrop-blur-md text-white p-3 rounded-md lg:rounded-xl shadow-lg transition-all opacity-90 hover:scale-105 flex items-center gap-2 text-xs font-semibold z-10"
                   >
                     <Maximize2 className="w-4 h-4" />
                     <span>{t("viewFullImage")}</span>
                   </button>
                 </div>
 
+                {/* Gallery Grid */}
                 {project.gallery && project.gallery.length > 0 && (
                   <div className="">
                     <div className="grid grid-cols-4 md:grid-cols-5 gap-2">
@@ -152,7 +154,6 @@ function ProjectDetails({ getDirection }) {
                           .auto("format")
                           .url();
 
-                        // Index in allImages array (+1 because index 0 is main image)
                         const imageGlobalIndex = idx + (project.image ? 1 : 0);
 
                         return (
@@ -160,11 +161,13 @@ function ProjectDetails({ getDirection }) {
                             key={idx}
                             whileHover={{ scale: 1.02 }}
                             onClick={() => setLightboxIndex(imageGlobalIndex)}
-                            className="relative group cursor-pointer h-16 md:h-28 rounded-md lg:rounded-lg overflow-hidden bg-colors-thirdBg shadow-md"
+                            className="relative group cursor-pointer h-16 md:h-28 rounded-md lg:rounded-lg overflow-hidden  bg-colors-blueColorDark/5 shadow-md"
                           >
                             <img
                               src={imgUrl}
                               alt={`${projectTitle} - ${idx + 1}`}
+                              loading="lazy"
+                              decoding="async"
                               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                             />
                             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -280,7 +283,7 @@ function ProjectDetails({ getDirection }) {
             {/* Close Button */}
             <button
               onClick={() => setLightboxIndex(null)}
-              className="absolute top-6 end-6 text-white/80 hover:text-white p-2 rounded-full bg-white/10 hover:bg-white/20 transition-all z-10"
+              className="absolute top-10 end-6 text-white/80 hover:text-white p-2 rounded-full bg-white/10 hover:bg-white/20 transition-all z-10"
             >
               <X className="w-6 h-6" />
             </button>
@@ -315,7 +318,7 @@ function ProjectDetails({ getDirection }) {
                 .auto("format")
                 .url()}
               alt="Project media expanded"
-              className="w-full max-w-[500px] lg:max-w-[600px] h-full max-h-[500px] lg:max-h-[600px] object-cover rounded-lg shadow-2xl"
+              className="w-full max-w-[500px] lg:max-w-[600px] h-full max-h-[500px] lg:max-h-[600px] object-cover bg-colors-blueColorDark/50 rounded-lg shadow-2xl"
             />
           </motion.div>
         )}
