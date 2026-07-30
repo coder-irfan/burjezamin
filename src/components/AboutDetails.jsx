@@ -27,7 +27,7 @@ function AboutDetails({ getDirection }) {
             <img
               src="/images/download (5)-optimized.webp"
               alt="About Us Feature"
-              loading="lazy"
+              fetchpriority="high"
               decoding="async"
               className="w-full h-full object-cover rounded-lg"
             />
