@@ -13,7 +13,6 @@ const FAQ = lazy(() => import("../components/FAQ"));
 const Testimonial = lazy(() => import("../components/Testimonial"));
 const Projects = lazy(() => import("../components/Projects"));
 const Contact = lazy(() => import("../components/Contact"));
-const Location = lazy(() => import("../components/Location"));
 const NewsLetter = lazy(() => import("../components/NewsLetter"));
 
 const Home = ({ getDirection }) => (
@@ -56,9 +55,7 @@ const Home = ({ getDirection }) => (
         <Contact getDirection={getDirection} />
       </div>
 
-      <Location />
-
-      <div className="bg-colors-secondBg">
+      <div className="bg-colors-bg">
         <NewsLetter />
       </div>
     </Suspense>

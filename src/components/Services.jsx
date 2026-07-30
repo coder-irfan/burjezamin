@@ -122,7 +122,10 @@ function Services({ getDirection }) {
                   <div className="mt-auto pt-2 md:pt-4">
                     <NavLink to={`/${lang}/projects`}>
                       <button className="text-sm font-semibold text-colors-secondTextColor hover:underline group-hover:translate-x-1 transition-transform flex items-center gap-1">
-                        {t("viewMore")} <LucideChevronsRight />
+                        {t("viewMore")}{" "}
+                        <LucideChevronsRight
+                          className={`w-5 h-5 ${isRTL ? "rotate-180" : ""}`}
+                        />
                       </button>
                     </NavLink>
                   </div>

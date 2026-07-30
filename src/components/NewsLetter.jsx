@@ -12,7 +12,7 @@ function NewsLetter() {
       `Hello, I would like to receive updates from Burj-e-Zamin.\nEmail: ${email}`,
     );
 
-    const phoneNumber = "+93711580580";
+    const phoneNumber = "+93703660660";
     const url = `https://wa.me/${phoneNumber}?text=${message}`;
 
     window.open(url, "_blank");

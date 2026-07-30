@@ -1,4 +1,4 @@
-import { useEffect, Suspense, lazy } from "react";
+import { useEffect, lazy } from "react";
 import { useTranslation } from "react-i18next";
 import { Routes, Route, Navigate, useParams, Outlet } from "react-router-dom";
 
@@ -57,45 +57,22 @@ function App() {
         {/* Layout Shell Wrapper */}
         <Route element={<Layout getDirection={getDirection} />}>
           <Route index element={<Home getDirection={getDirection} />} />
-          <Route
-            path="about"
-            element={
-              <Suspense>
-                <About getDirection={getDirection} />
-              </Suspense>
-            }
-          />
+          <Route path="about" element={<About getDirection={getDirection} />} />
           <Route
             path="services"
-            element={
-              <Suspense>
-                <Services getDirection={getDirection} />
-              </Suspense>
-            }
+            element={<Services getDirection={getDirection} />}
           />
           <Route
             path="projects"
-            element={
-              <Suspense>
-                <Projects getDirection={getDirection} />
-              </Suspense>
-            }
+            element={<Projects getDirection={getDirection} />}
           />
           <Route
             path="projects/:slug"
-            element={
-              <Suspense>
-                <ProjectDetails getDirection={getDirection} />
-              </Suspense>
-            }
+            element={<ProjectDetails getDirection={getDirection} />}
           />
           <Route
             path="contact"
-            element={
-              <Suspense>
-                <Contact getDirection={getDirection} />
-              </Suspense>
-            }
+            element={<Contact getDirection={getDirection} />}
           />
         </Route>
       </Route>

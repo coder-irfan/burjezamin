@@ -45,7 +45,7 @@ function FAQ({ getDirection }) {
       <section
         id="faq"
         dir={getDirection()}
-        className="relative px-4 sm:px-6 md:px-8 lg:px-16 py-14 md:py-14 lg:py-24 space-y-6 md:space-y-10 scroll-mt-20"
+        className="relative px-4 sm:px-6 md:px-8 lg:px-16 py-14 md:py-14 lg:py-24 scroll-mt-20"
       >
         <div className="absolute top-10 left-0 lg:left-[-4rem] bg-colors-blueColorLightesh/30 w-28 h-28 lg:w-52 lg:h-52 blur-[100px] rounded-full -z-10"></div>
         <div className="absolute bottom-10 right-0 lg:right-[-4rem] bg-colors-blueColorLightesh/30 w-28 h-28 lg:w-52 lg:h-52 blur-[100px] rounded-full -z-10"></div>

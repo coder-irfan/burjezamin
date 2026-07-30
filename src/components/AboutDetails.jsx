@@ -25,7 +25,7 @@ function AboutDetails({ getDirection }) {
           {/* Main Visual Image */}
           <div className="">
             <img
-              src="/images/download (5)-optimized.webp" // Place your new image here
+              src="/images/about-us-details.webp"
               alt="About Us Feature"
               loading="lazy"
               decoding="async"

@@ -7,8 +7,8 @@ export default defineConfig({
   name: 'default',
   title: 'burjezamin',
 
-  projectId: import.meta.env.VITE_SANITY_PROJECT_ID,
-  dataset: import.meta.env.VITE_SANITY_DATASET,
+  projectId: 'chxx9nq4',
+  dataset: 'production',
 
   plugins: [structureTool(), visionTool()],
 

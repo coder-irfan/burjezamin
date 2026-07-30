@@ -6,7 +6,18 @@ function WhatsApp() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 300) {
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+
+      // Distance from the very bottom of the document
+      const distanceFromBottom = documentHeight - (scrollY + windowHeight);
+
+      // Show after scrolling 300px down, BUT hide if within 300px of the footer/bottom
+      const isPastHero = scrollY > 300;
+      const isNearFooter = distanceFromBottom < 700;
+
+      if (isPastHero && !isNearFooter) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
@@ -14,7 +25,6 @@ function WhatsApp() {
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 

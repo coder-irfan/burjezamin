@@ -103,6 +103,18 @@
   "loadingProjects": "Loading Projects...",
   "noProjectsFound": "No Projects Found!",
 
+  "backToProjects": "Back to Projects",
+  "projectOverview": "Project Overview",
+  "projectGallery": "Project Gallery",
+  "projectDetails": "Project Information",
+  "completionDate": "Released Date",
+  "status": "Status",
+  "completed": "Successfully Completed",
+  "qualityGuarantee": "Quality Assurance",
+  "certifiedEngineering": "Certified Standards",
+  "interestedInSimilar": "Looking for a similar engineering or construction project?",
+  "viewFullImage": "View Fullscreen",
+
   "contactSection": "Contact",
   "contactTitle": "Get In",
   "contactHighlight": "Touch",
@@ -165,6 +177,8 @@
   "newsletterDesc": "Stay informed with updates, and expert advice from us.",
   "newsletterPlaceholder": "Enter your email for updates",
   "newsletterSend": "Send",
+
+  "LoadingMap": "Loading Goolge Map...",
 
   "footerDesc": "Burj-e-Zamin is fully committed to quality, innovation, and client satisfaction, consistently striving to deliver lasting, safe, and valuable projects.",
   "company": "Company",

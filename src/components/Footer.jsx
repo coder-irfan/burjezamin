@@ -142,10 +142,7 @@ function Footer({ getDirection }) {
 
         <AnimatedTracks />
 
-        <div
-          dir="ltr"
-          className="px-4 sm:px-6 md:px-8 lg:px-16 flex items-center justify-between text-xs sm:text-sm md:text-base gap-2"
-        >
+        <div className="px-4 sm:px-6 md:px-8 lg:px-16 flex items-center justify-between text-xs sm:text-sm md:text-base gap-2">
           <p className="flex items-center gap-2">
             {t("developedBy")}
             <span className="text-colors-blueColorDark hover:text-colors-blueColorLightesh transition duration-200 underline font-medium">

@@ -101,6 +101,18 @@
   "loadingProjects": "بارگذاری پروژه ها",
   "noProjectsFound": "هیچ پروژه‌ای یافت نشد!",
 
+  "backToProjects": "بازگشت به پروژه‌ها",
+  "projectOverview": "بررسی کلی پروژه",
+  "projectGallery": "گالری تصاویر پروژه",
+  "projectDetails": "مشخصات پروژه",
+  "completionDate": "تاریخ انتشار",
+  "status": "وضعیت پروژه",
+  "completed": "تکمیل شده با موفقیت",
+  "qualityGuarantee": "تضمین کیفیت",
+  "certifiedEngineering": "مطابق با استانداردهای مهندسی",
+  "interestedInSimilar": "آیا به دنبال اجرای پروژه مشابه مهندسی یا ساختمانی هستید؟",
+  "viewFullImage": "مشاهده تصویر کامل",
+
   "contactSection": "تماس",
   "contactTitle": "با ما",
   "contactHighlight": "در تماس",
@@ -170,6 +182,8 @@
   "newsletterDesc": "از آخرین به‌روزرسانی‌ها و مشاوره‌های تخصصی ما باخبر بمانید.",
   "newsletterPlaceholder": "ایمیل خود را برای دریافت وارد کنید",
   "newsletterSend": "ارسال",
+
+  "LoadingMap": "بارگذاری نقشه گوگل",
 
   "footerDesc": "شرکت برج زمین با تعهد کامل به کیفیت، نوآوری و رضایت مشتری، همواره تلاش می کند تا پروژه هایی ماندگار، ایمن و باارزش خلق نماید.",
   "company": "شرکت",

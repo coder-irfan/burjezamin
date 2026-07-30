@@ -50,8 +50,8 @@ function Hero({ getDirection }) {
             <p className="text-sm lg:text-base">{t("heroDescription")}</p>
 
             <div className="flex items-center justify-center md:justify-start gap-2 pt-4 lg:pt-8">
-              <NavLink to={`/${lang}/about`} className="button">
-                {t("learnMore")}
+              <NavLink to={`/${lang}/projects`} className="button">
+                {t("ourProjects")}
               </NavLink>
               <NavLink to={`/${lang}/contact`} className="button">
                 {t("contactUs")}

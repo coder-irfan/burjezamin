@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 function Location() {
   const [loaded, setLoaded] = useState(false);
+  const { t } = useTranslation();
 
   return (
     <section
@@ -17,7 +19,7 @@ function Location() {
 
             {/* Text */}
             <p className="text-sm md:text-base text-colors-textDarkGray/70 font-medium">
-              Loading map...
+              {t("LoadingMap")}
             </p>
           </div>
         )}

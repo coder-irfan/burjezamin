@@ -1,25 +1,16 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { AnimatePresence, motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
-import {
-  Calendar,
-  Folder,
-  ChevronDown,
-  ChevronUp,
-  Send,
-  X,
-  LucideChevronsRight,
-} from "lucide-react";
+import { ChevronDown, ChevronUp, LucideChevronsRight } from "lucide-react";
 import { client, urlFor } from "../sanityClient";
 
-function DoneProjects({ getDirection }) {
+function DoneProjects({ getDirection, limit }) {
   const isRTL = getDirection() === "rtl";
   const { t, i18n } = useTranslation();
 
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [selectedProject, setSelectedProject] = useState(null);
 
   // Show 6 projects initially
   const [showAll, setShowAll] = useState(false);
@@ -28,13 +19,23 @@ function DoneProjects({ getDirection }) {
     i18n.language && i18n.language.startsWith("fa") ? "fa" : "en";
 
   useEffect(() => {
-    const query = `*[_type == "project"] | order(_createdAt desc) {
-      _id,
-      _createdAt,
-      title,
-      description,
-      image
-    }`;
+    const query = limit
+      ? `*[_type == "project"] | order(_createdAt desc)[0...${limit}] {
+          _id,
+          _createdAt,
+          slug,
+          title,
+          description,
+          image
+        }`
+      : `*[_type == "project"] | order(_createdAt desc) {
+          _id,
+          _createdAt,
+          slug,
+          title,
+          description,
+          image
+        }`;
 
     client
       .fetch(query)
@@ -46,37 +47,7 @@ function DoneProjects({ getDirection }) {
         console.error("Sanity fetch error:", err);
         setLoading(false);
       });
-  }, []);
-
-  // Lock background scrolling when modal is open + enable ESC key closing
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === "Escape") setSelectedProject(null);
-    };
-
-    if (selectedProject) {
-      const scrollbarWidth =
-        window.innerWidth - document.documentElement.clientWidth;
-
-      // Lock both body and html elements to prevent background scrolling on all browsers
-      document.body.style.overflow = "hidden";
-      document.documentElement.style.overflow = "hidden";
-      document.body.style.paddingRight = `${scrollbarWidth}px`;
-
-      window.addEventListener("keydown", handleKeyDown);
-    } else {
-      document.body.style.overflow = "";
-      document.documentElement.style.overflow = "";
-      document.body.style.paddingRight = "";
-    }
-
-    return () => {
-      document.body.style.overflow = "";
-      document.documentElement.style.overflow = "";
-      document.body.style.paddingRight = "";
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [selectedProject]);
+  }, [limit]);
 
   // Determine displayed list length (First 6 or All)
   const displayedProjects = showAll ? projects : projects.slice(0, 6);
@@ -113,8 +84,13 @@ function DoneProjects({ getDirection }) {
 
       {/* Projects Grid */}
       {loading ? (
-        <div className="text-center py-12 text-colors-textDarkGray font-medium">
-          {t("loadingProjects")}
+        <div className="min-h-[20vh] flex items-center justify-center bg-colors-bg">
+          <div className="flex flex-col items-center gap-3">
+            <div className="w-10 h-10 border-4 border-colors-blueColorDark border-t-transparent rounded-full animate-spin" />
+            <p className="text-colors-textDarkGray font-medium text-sm">
+              {t("loadingProjects")}
+            </p>
+          </div>
         </div>
       ) : projects.length === 0 ? (
         <div className="text-center py-12 text-colors-textDarkGray font-medium">
@@ -138,13 +114,17 @@ function DoneProjects({ getDirection }) {
                     .url()
                 : "";
 
+              const projectSlug = project.slug?.current || "#";
+
               return (
                 <div
                   key={project._id}
-                  onClick={() => setSelectedProject(project)}
                   className="group cursor-pointer border border-colors-textDarkGray/20 rounded-xl overflow-hidden bg-colors-bg shadow-sm hover:shadow-lg transition-all duration-300"
                 >
-                  <div className="relative overflow-hidden">
+                  <Link
+                    to={`/${currentLang}/projects/${projectSlug}`}
+                    className="block relative overflow-hidden"
+                  >
                     {imageUrl && (
                       <ProjectImage
                         src={imageUrl}
@@ -156,12 +136,14 @@ function DoneProjects({ getDirection }) {
                     <span className="absolute top-3 left-3 bg-colors-textDarkGray/80 text-colors-textLightColor text-xs px-3 py-1 rounded-full">
                       {t("projectCount")} {String(index + 1).padStart(2, "0")}
                     </span>
-                  </div>
+                  </Link>
 
                   <div className="p-6 space-y-3">
-                    <h3 className="text-h3 font-semibold text-colors-textDarkColor group-hover:text-colors-blueColorDark transition-colors">
-                      {projectTitle}
-                    </h3>
+                    <Link to={`/${currentLang}/projects/${projectSlug}`}>
+                      <h3 className="text-h3 font-semibold text-colors-textDarkColor group-hover:text-colors-blueColorDark transition-colors">
+                        {projectTitle}
+                      </h3>
+                    </Link>
 
                     <p className="text-sm text-colors-textDarkGray line-clamp-3 leading-relaxed">
                       {projectDesc}
@@ -172,9 +154,15 @@ function DoneProjects({ getDirection }) {
                         {t("completedProject")}
                       </span>
 
-                      <button className="text-sm font-semibold text-colors-secondTextColor group-hover:translate-x-1 transition-transform flex items-center gap-1">
-                        {t("seeDetails")} <LucideChevronsRight />
-                      </button>
+                      <Link
+                        to={`/${currentLang}/projects/${projectSlug}`}
+                        className="text-sm font-semibold text-colors-secondTextColor group-hover:translate-x-1 transition-transform flex items-center gap-1"
+                      >
+                        {t("seeDetails")}{" "}
+                        <LucideChevronsRight
+                          className={`w-5 h-5 ${isRTL ? "rotate-180" : ""}`}
+                        />
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -197,139 +185,11 @@ function DoneProjects({ getDirection }) {
           )}
         </>
       )}
-
-      {/* Step 2 Modal Integration below */}
-      <ProjectModal
-        selectedProject={selectedProject}
-        setSelectedProject={setSelectedProject}
-        currentLang={currentLang}
-        getDirection={getDirection}
-        t={t}
-      />
     </section>
   );
 }
 
 export default DoneProjects;
-
-function ProjectModal({
-  selectedProject,
-  setSelectedProject,
-  currentLang,
-  getDirection,
-  t,
-}) {
-  return (
-    <AnimatePresence>
-      {selectedProject && (
-        <div
-          className="fixed inset-0 -top-10 md:-top-16 z-[100] flex items-center justify-center p-4 sm:p-6 py-8 sm:py-12 overflow-hidden"
-          dir={getDirection()}
-        >
-          {/* Animated Backdrop Blur */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 bg-colors-secondBg/20 backdrop-blur-sm"
-            onClick={() => setSelectedProject(null)}
-          />
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            className="relative w-full max-w-3xl max-h-[90vh] my-auto overflow-y-auto overscroll-contain bg-colors-bg rounded-2xl shadow-2xl z-10
-             "
-            style={{
-              scrollbarWidth: "none",
-            }}
-          >
-            {/* Header / Sticky Close Action */}
-            <div className="sticky top-0 right-0 left-0 z-20 flex justify-end p-4 pointer-events-none bg-gradient-to-b from-black/50 via-black/20 to-transparent">
-              <button
-                onClick={() => setSelectedProject(null)}
-                className="pointer-events-auto bg-colors-bg/90 hover:bg-colors-secondBg text-colors-textDarkColor p-2 rounded-full shadow-lg transition-all transform hover:scale-110 active:scale-95"
-                aria-label="Close modal"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-
-            {/* Modal Image Header - Reduced image height so content fits comfortably */}
-            {selectedProject.image && (
-              <div className="-mt-20 relative">
-                <div className="w-full h-80 lg:h-[450px] bg-colors-secondBg flex items-center justify-center text-center overflow-hidden rounded-t-xl">
-                  <ProjectImage
-                    src={urlFor(selectedProject.image)
-                      .width(1200)
-                      .quality(85)
-                      .auto("format")
-                      .url()}
-                    alt={
-                      selectedProject.title?.[currentLang] ||
-                      selectedProject.title?.en ||
-                      "Project image"
-                    }
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-            )}
-
-            {/* Content Body */}
-            <div className="p-6 sm:p-8 space-y-6">
-              {/* Meta Tags */}
-              <div className="flex flex-wrap items-center gap-4 text-xs font-medium text-colors-textDarkGray border-b border-colors-textDarkGray/10 pb-4">
-                <div className="flex items-center gap-1.5 bg-colors-secondBg px-3 py-1.5 rounded-lg">
-                  <Calendar className="w-4 h-4 text-colors-blueColorLightesh" />
-                  <span>
-                    {new Date(selectedProject._createdAt).toLocaleDateString(
-                      currentLang === "fa" ? "fa-AF" : "en-US",
-                      { year: "numeric", month: "long", day: "numeric" },
-                    )}
-                  </span>
-                </div>
-
-                <div className="flex items-center gap-1.5 bg-colors-secondBg px-3 py-1.5 rounded-lg">
-                  <Folder className="w-4 h-4 text-colors-blueColorLightesh" />
-                  <span>{t("completedProject") || "Completed"}</span>
-                </div>
-              </div>
-
-              {/* Title */}
-              <h3 className="text-h2 font-bold text-colors-textDarkColor leading-snug">
-                {selectedProject.title?.[currentLang] ||
-                  selectedProject.title?.en}
-              </h3>
-
-              {/* Description */}
-              <p className="text-sm sm:text-base text-colors-textDarkGray leading-relaxed whitespace-pre-line font-normal">
-                {selectedProject.description?.[currentLang] ||
-                  selectedProject.description?.en}
-              </p>
-
-              {/* Modal Footer / Action CTA */}
-              <div className="pt-6 border-t border-colors-textDarkGray/15 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <a
-                  href="#contact"
-                  onClick={() => setSelectedProject(null)}
-                  className="w-full sm:w-auto"
-                >
-                  <button className="button">
-                    <Send className="w-5 h-5" />
-                    <span>{t("contactUs")}</span>
-                  </button>
-                </a>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      )}
-    </AnimatePresence>
-  );
-}
 
 function ProjectImage({ src, alt, className }) {
   const [loaded, setLoaded] = useState(false);
