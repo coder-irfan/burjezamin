@@ -68,13 +68,10 @@ function ProjectDetails({ getDirection }) {
 
   if (!project) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-colors-bg px-4 text-center">
+      <div className="min-h-[60vh] flex flex-col items-center justify-center bg-colors-bg px-4 text-center">
         <h2 className="text-h3 font-bold text-colors-textDarkColor mb-2">
           {t("noProjectsFound")}
         </h2>
-        <p className="text-colors-textDarkGray mb-6">
-          The requested project might have been moved or deleted.
-        </p>
         <Link
           to={`/${currentLang}/projects`}
           className="button inline-flex items-center gap-2"
