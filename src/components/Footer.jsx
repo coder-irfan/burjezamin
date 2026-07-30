@@ -148,7 +148,7 @@ function Footer({ getDirection }) {
             <span className="text-colors-blueColorDark hover:text-colors-blueColorLightesh transition duration-200 underline font-medium">
               <a href="https://designmasters.tech" target="_blank" className="">
                 <img
-                  src="/images/design-masters-logo.webp"
+                  src="/images/design-masters-logo.png"
                   alt="logo"
                   className="w-6 md:w-7 object-contain"
                   title="Design Masters"
