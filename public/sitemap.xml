@@ -5,7 +5,7 @@
 
   <!-- Root Default -->
   <url>
-    <loc>https://burjezamin.onrender.com/</loc>
+    <loc>https://burjezamincc.com/</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -13,10 +13,10 @@
 
   <!-- English Version -->
   <url>
-    <loc>https://burjezamin.onrender.com/en</loc>
+    <loc>https://burjezamincc.com/en</loc>
 
-    <xhtml:link rel="alternate" hreflang="en" href="https://burjezamin.onrender.com/en"/>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://burjezamin.onrender.com/fa"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://burjezamincc.com/en"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://burjezamincc.com/fa"/>
     
     <lastmod>2026-07-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -25,10 +25,10 @@
 
   <!-- Dari / Persian Version -->
   <url>
-    <loc>https://burjezamin.onrender.com/fa</loc>
+    <loc>https://burjezamincc.com/fa</loc>
 
-    <xhtml:link rel="alternate" hreflang="en" href="https://burjezamin.onrender.com/en"/>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://burjezamin.onrender.com/fa"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://burjezamincc.com/en"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://burjezamincc.com/fa"/>
 
     <lastmod>2026-07-25</lastmod>
     <changefreq>weekly</changefreq>
